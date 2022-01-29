@@ -1,7 +1,11 @@
 class CardsController < ApplicationController
 
   def index
-    @cards = Card.all
+    if params[:order] == 'desc'
+      @cards = Card.where(user_id: current_user).order(points: :desc)
+    else
+      @cards = Card.where(user_id: current_user)
+    end
   end
 
   def show

@@ -1,5 +1,10 @@
 <h2>This is the cards index</h2>
 
-<% @cards.each do |card| %>
-  <%= card.business.name %>
-<% end %>
+<%= link_to "Order by points", cards_path(order:'desc') %>
+<ul>
+  <% @cards.each do |card| %>
+    <li>
+      <%= link_to card.business.name, business_path(card) %> - <%= card.points %>
+    </li>
+  <% end %>
+</ul>
