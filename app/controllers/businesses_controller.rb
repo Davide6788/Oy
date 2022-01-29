@@ -1,6 +1,14 @@
 class BusinessesController < ApplicationController
   def index
-    @business = Business.all
+    @businesses = Business.where.not(latitude: nil, longitude: nil)
+    @markers = @businesses.map do |business|
+      {
+        lat: business.latitude,
+        lng: business.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { business: business })
+
+      }
+    end
   end
 
   def show
@@ -37,5 +45,3 @@ class BusinessesController < ApplicationController
     params.require(:business).permit(:name, :address, :category)
   end
 end
-
-##
