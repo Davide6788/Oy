@@ -14,17 +14,30 @@ User.create!(email: 'victor@test.com', password: 'victor')
 User.create!(email: 'matthew@test.com', password: 'matthew')
 User.create!(email: 'davide@test.com', password: 'davide')
 
-puts "Creating 1 reward mechanism"
+puts "Creating 1 reward mechanism..."
 
 RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15)
 
-puts "Creating 20 businesses"
+puts "Creating 10 categories..."
+
+Category.create!(category: "fast-food")
+Category.create!(category: "deli")
+Category.create!(category: "wine shop")
+Category.create!(category: "fishmonger")
+Category.create!(category: "cheesemonger")
+Category.create!(category: "bakery")
+Category.create!(category: "greengrocer")
+Category.create!(category: "coffee shop")
+Category.create!(category: "tea-room")
+Category.create!(category: "butcher")
+
+puts "Creating 20 businesses..."
 
 20.times do
-  Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category: Faker::Restaurant.type, user_id: rand(1..4), reward_mechanism_id: 1)
+  Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4), reward_mechanism_id: 1)
 end
 
-puts "Creating 20 cards"
+puts "Creating 20 cards..."
 
 Card.create!(points: rand(11), business_id: 1, user_id: 1)
 Card.create!(points: rand(11), business_id: 2, user_id: 2)
