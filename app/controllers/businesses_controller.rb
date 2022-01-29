@@ -3,6 +3,7 @@ class BusinessesController < ApplicationController
     @business = Business.find(params[:id])
   end
 
+
   def create
     @business = Business.new(business_params)
     @business.user_id = current_user.id
@@ -29,3 +30,6 @@ class BusinessesController < ApplicationController
     params.require(:business).permit(:name, :address, :category)
   end
 end
+
+
+## 
