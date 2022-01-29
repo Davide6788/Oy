@@ -3,8 +3,12 @@ class BusinessesController < ApplicationController
     @business = Business.all
   end
 
-  def new
+  def show
     @business = Business.find(params[:id])
+  end
+
+  def new
+    @business = Business.new
   end
 
   def create
