@@ -1,0 +1,12 @@
+<h1>Create your businnes</h1>
+
+<div class="container-form-new">
+  <%= simple_form_for [ @business ] do |f| %>
+    <div class="create-business-form">
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :category %>
+      <%= f.submit "Create my business", class: "new-business-btn" %>
+    </div>
+  <% end %>
+</div>

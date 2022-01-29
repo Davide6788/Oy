@@ -1,8 +1,11 @@
 class BusinessesController < ApplicationController
+  def index
+    @business = Business.all
+  end
+
   def new
     @business = Business.find(params[:id])
   end
-
 
   def create
     @business = Business.new(business_params)
@@ -31,5 +34,4 @@ class BusinessesController < ApplicationController
   end
 end
 
-
-## 
+##
