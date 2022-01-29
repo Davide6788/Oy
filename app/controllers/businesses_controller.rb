@@ -5,6 +5,7 @@ class BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
+    @business.user_id = current_user.id
     if @business.save
       redirect_to business_path(@business)
     else
