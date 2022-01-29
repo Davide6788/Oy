@@ -1,5 +1,7 @@
 <h2>This is the cards index</h2>
 
+<%= link_to "Order by points", cards_path(order:'desc') %>
+
 <ul>
   <% @cards.each do |card| %>
     <li>
