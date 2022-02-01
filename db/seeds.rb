@@ -14,10 +14,6 @@ User.create!(email: 'victor@test.com', password: 'victor')
 User.create!(email: 'matthew@test.com', password: 'matthew')
 User.create!(email: 'davide@test.com', password: 'davide')
 
-puts "Creating 1 reward mechanism..."
-
-RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15)
-
 puts "Creating 10 categories..."
 
 Category.create!(category: "fast-food")
@@ -34,8 +30,31 @@ Category.create!(category: "butcher")
 puts "Creating 20 businesses..."
 
 20.times do
-  Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4), reward_mechanism_id: 1)
+  Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
 end
+
+puts "Creating 20 reward mechanism..."
+
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 1)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 2)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 3)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 4)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 5)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 6)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 7)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 8)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 9)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 10)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 11)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 12)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 13)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 14)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 15)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 16)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 17)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 18)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 19)
+RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 20)
 
 puts "Creating 20 cards..."
 
