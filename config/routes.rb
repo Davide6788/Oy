@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :cards, only: [:index, :show]
   resources :businesses
   ##, only: [:new, :create, :update, :destroy, :show]
-  resources :reward_mechanisms, only: [:new, :create]
+  resources :businesses do
+    resources :reward_mechanisms, only: [:new, :create]
+  end
 end

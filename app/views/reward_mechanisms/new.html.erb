@@ -1,7 +1,7 @@
 <h1>Create your loyalty card</h1>
 
 <div class="container-form-new">
-  <%= simple_form_for @reward_mechanism do |f| %>
+  <%= simple_form_for [ @business, @reward_mechanism ] do |f| %>
     <div class="create-business-form">
       <%= f.input :counter %>
       <%= f.input :discount %>

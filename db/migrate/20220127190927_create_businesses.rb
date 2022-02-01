@@ -5,7 +5,6 @@ class CreateBusinesses < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :category
       t.references :user, null: false, foreign_key: true
-      t.references :reward_mechanism, null: false, foreign_key: true
 
       t.timestamps
     end
