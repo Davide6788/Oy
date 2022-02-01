@@ -6,6 +6,8 @@
       <%= f.input :name %>
       <%= f.input :address %>
       <%= f.input :category %>
+      <%= f.input :photo, as: :file %>
+
       <%= f.submit "Create my business", class: "new-business-btn" %>
     </div>
   <% end %>
