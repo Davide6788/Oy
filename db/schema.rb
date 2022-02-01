@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_29_141655) do
+ActiveRecord::Schema.define(version: 2022_02_01_190951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,14 +19,12 @@ ActiveRecord::Schema.define(version: 2022_01_29_141655) do
     t.string "name"
     t.string "address"
     t.bigint "user_id", null: false
-    t.bigint "reward_mechanism_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
     t.float "latitude"
     t.float "longitude"
     t.index ["category_id"], name: "index_businesses_on_category_id"
-    t.index ["reward_mechanism_id"], name: "index_businesses_on_reward_mechanism_id"
     t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
@@ -52,6 +50,8 @@ ActiveRecord::Schema.define(version: 2022_01_29_141655) do
     t.integer "minimum_purchase"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "business_id", null: false
+    t.index ["business_id"], name: "index_reward_mechanisms_on_business_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 2022_01_29_141655) do
   end
 
   add_foreign_key "businesses", "categories"
-  add_foreign_key "businesses", "reward_mechanisms"
   add_foreign_key "businesses", "users"
   add_foreign_key "cards", "businesses"
   add_foreign_key "cards", "users"
+  add_foreign_key "reward_mechanisms", "businesses"
 end
