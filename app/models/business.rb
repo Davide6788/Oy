@@ -5,6 +5,7 @@ class Business < ApplicationRecord
   has_one :reward_mechanism
   belongs_to :category
   has_many :cards
+  has_one_attached :photo
 
   validates :name, :address, :category, presence: true
 end
