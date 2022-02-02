@@ -31,15 +31,17 @@
   position: absolute;
   bottom: 160px;
   right: 70px;
+  text-align: right;
   li {
     margin-bottom:20px;
     list-style: none;
+    font-size: 50px;
   }
 }
 
 .third-part {
   width: 250px;
-  margin-top: 10px;
+  margin-top: -17px;
   margin-left: 36px;
   h2 {
     font-size: 40px;
@@ -49,14 +51,42 @@
 .fourth-part {
   position: absolute;
   bottom: 0px;
-  right: 70px;
+  right: 30px;
+  text-align: right;
+  h3 {
+    font-size: 40px;
+  }
+}
 
+.fifth-part {
+  margin-top: 100px;
+  margin-left: 36px;
+  width: 200px;
+  h2 {
+    font-size: 40px;
+  }
 }
 
 .oy-logo {
-  margin-left: 354px;
+  margin-left: 374px;
   width: 100px;
   height: 100px;
   background-image: asset-url("logo-menu.png");
   background-repeat: no-repeat;
+}
+
+.sixth-part {
+  text-align: right;
+  h2{
+    font-size: 40px;
+  }
+}
+
+.seventh-part {
+  text-align: left;
+  margin-top: 90px;
+  margin-left: 36px;
+  h2 {
+    font-size: 40px;
+  }
 }
