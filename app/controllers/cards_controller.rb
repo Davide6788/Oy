@@ -12,6 +12,13 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
+  def add_point
+    @card = Card.find(params[:id])
+    @card.points += 1
+    @card.save
+    redirect_to my_customers_business_path
+  end
+
   def new
     @business = Business.find(params[:business_id])
     @card = Card.new
