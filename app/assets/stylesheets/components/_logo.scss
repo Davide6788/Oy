@@ -1,0 +1,23 @@
+.oy-logo {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 20px;
+  background-color: black;
+  list-style: none;
+}
+
+.navbar {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  list-style: none;
+}
+
+.dropdown-menu.show{
+  z-index: 100;
+  background-color: yellow;
+  overflow: hidden;
+  position: absolute;
+
+}
