@@ -29,6 +29,8 @@ document.addEventListener("turbolinks:load", () => {
 });
 
 import mapboxgl from "mapbox-gl"; // or "const mapboxgl = require('mapbox-gl');"
+import { initAutocomplete } from "../plugins/init_autocomplete";
+initAutocomplete();
 
 const mapElement = document.getElementById("map");
 const markers = JSON.parse(mapElement.dataset.markers);
@@ -36,7 +38,23 @@ const markers = JSON.parse(mapElement.dataset.markers);
 mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 const map = new mapboxgl.Map({
   container: "map", // container ID
-  style: "mapbox://styles/mapbox/streets-v11", // style URL
+  style: "mapbox://styles/victorpln/ckz7eim5k006l14mif3mo037f", // style URL
+});
+
+markers.forEach((marker) => {
+  const popup = new mapboxgl.Popup().setHTML(marker.infowindow);
+
+  const element = document.createElement("div");
+  element.className = "marker";
+  element.style.backgroundImage = `url('${marker.image_url}')`;
+  element.style.backgroundSize = "contain";
+  element.style.width = "25px";
+  element.style.height = "25px";
+
+  new mapboxgl.Marker()
+    .setLngLat([marker.lng, marker.lat])
+    .setPopup(popup)
+    .addTo(map);
 });
 
 const fitMapToMarkers = (map, markers) => {
@@ -45,9 +63,4 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
-markers.forEach((marker) => {
-  const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-
-  new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
-});
 fitMapToMarkers(map, markers);
