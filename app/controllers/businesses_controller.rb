@@ -23,7 +23,7 @@ class BusinessesController < ApplicationController
     @business = Business.new(business_params)
     @business.user_id = current_user.id
     if @business.save
-      redirect_to business_path(@business)
+      redirect_to new_business_reward_mechanism_path(@business)
     else
       render :new
     end
@@ -42,6 +42,6 @@ class BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit(:name, :address, :category_id, :photo)
+    params.require(:business).permit(:name, :address, :category_id, :photo, :description, :host_names)
   end
 end
