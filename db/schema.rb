@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2022_02_01_190951) do
     t.bigint "category_id", null: false
     t.float "latitude"
     t.float "longitude"
+    t.text "description"
+    t.string "host_names"
     t.index ["category_id"], name: "index_businesses_on_category_id"
     t.index ["user_id"], name: "index_businesses_on_user_id"
   end
