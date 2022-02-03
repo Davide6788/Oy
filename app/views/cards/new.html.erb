@@ -1,0 +1,10 @@
+<h1>Add a new customer</h1>
+
+<div class="container-form-new">
+  <%= simple_form_for [ @business, @card] do |f| %>
+    <div class="create-business-form">
+      <%= f.association :user, label_method: :code %>
+      <%= f.submit "Add Customer", class: "new-business-btn" %>
+    </div>
+  <% end %>
+</div>
