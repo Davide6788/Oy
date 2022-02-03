@@ -1,5 +1,10 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;900&family=Raleway:wght@300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+
+// Define fonts for body and headers
+// $body-font: "Work Sans", "Helvetica", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@300;400;700&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Overpass";
@@ -14,3 +19,28 @@ $headers-font: "Overpass";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h1, h2, p, a {
+  font-family: "Overpass";
+  color: $white;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+p, a {
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  font-weight: 100;
+}
