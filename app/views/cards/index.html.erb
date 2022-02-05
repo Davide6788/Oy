@@ -16,9 +16,9 @@
             <div class="cards-wallet-index-card wallet-card-image">
                 <%# cl_image_tag(card.business.photo.key,
                 width: 400, height: 300, crop: :fill) %>
-              <p><%= card.business.photo.key %></p>
+              <p><%# card.business.photo.key %></p>
 
-              <%= cl_image_tag("vu4gbb7i1jbrbcxhqhfb",
+              <%= cl_image_tag(card.business.photo.key,
               style:'height:12rem;width:100%;', class: "cards-wallet-image-img") %>
               <div class="cards-wallet-index-card wallet-card-details col-8 col-md-6">
                 <p class="text-shadow"><%= card.points %>/10</p>
