@@ -29,6 +29,7 @@ Category.create!(category: "butcher")
 puts "Creating 20 businesses..."
 
 
+
 business = Business.create!(
   name: "Surpriz ",
   description: "Restaurant animé servant des döner kebabs façon berlinoise au poulet, dans un espace simple et accueillant.",
@@ -119,6 +120,7 @@ business = Business.create!(
 business.photo.attach(io: File.open("app/assets/images/beef.jpeg"), filename: "boucherie.jpeg", content_type: "image/jpeg")
 
 
+
 puts "Creating 20 reward mechanism..."
 
 RewardMechanism.create!(counter: 10, discount: 'Free booze', minimum_purchase: 15, business_id: 1)
@@ -146,7 +148,7 @@ puts "Creating 20 cards..."
 
 Card.create!(points: rand(11), business_id: 1, user_id: 1)
 Card.create!(points: rand(11), business_id: 2, user_id: 2)
-Card.create!(points: rand(11), business_id: 3, user_id: 3)
+Card.create!(points: rand(11), business_id: 3, user_id: 4)
 Card.create!(points: rand(11), business_id: 4, user_id: 4)
 Card.create!(points: rand(11), business_id: 5, user_id: 1)
 Card.create!(points: rand(11), business_id: 6, user_id: 2)
