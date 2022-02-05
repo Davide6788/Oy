@@ -11,7 +11,7 @@
     <p class= ""><%= @business.category.category %></p>
   </div>
 
-  <%= cl_image_tag("vu4gbb7i1jbrbcxhqhfb",
+  <%= cl_image_tag(@business.photo.key,
       width: 400, height: 300, crop: :fill) %>
 
 </div>

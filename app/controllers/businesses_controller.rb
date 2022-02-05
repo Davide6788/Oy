@@ -1,4 +1,5 @@
 class BusinessesController < ApplicationController
+
   def index
     @businesses = Business.where.not(latitude: nil, longitude: nil)
     @markers = @businesses.map do |business|
@@ -13,6 +14,14 @@ class BusinessesController < ApplicationController
   end
 
   def show
+    @business = Business.find(params[:id])
+  end
+
+  def my_businesses
+    @businesses = Business.where(user_id: current_user)
+  end
+
+  def my_customers
     @business = Business.find(params[:id])
   end
 

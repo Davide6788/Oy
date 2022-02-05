@@ -9,10 +9,10 @@ require 'faker'
 
 puts "Creating 4 users..."
 
-User.create!(email: 'hannah@test.com', password: 'hannah')
-User.create!(email: 'victor@test.com', password: 'victor')
-User.create!(email: 'matthew@test.com', password: 'matthew')
-User.create!(email: 'davide@test.com', password: 'davide')
+User.create!(email: 'hannah@test.com', password: 'hannah', code: "hannah")
+User.create!(email: 'victor@test.com', password: 'victor', code: "victor")
+User.create!(email: 'matthew@test.com', password: 'matthew', code: "matthew")
+User.create!(email: 'davide@test.com', password: 'davide', code: "davide")
 
 puts "Creating 10 categories..."
 
@@ -31,6 +31,25 @@ puts "Creating 20 businesses..."
 
 20.times do
   Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
 end
 
 puts "Creating 20 reward mechanism..."
