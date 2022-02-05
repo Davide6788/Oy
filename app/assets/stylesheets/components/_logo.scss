@@ -1,23 +1,58 @@
 .oy-logo {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  right: 20px;
-  background-color: black;
-  list-style: none;
+  width: 3rem;
+  height: 6rem;
 }
 
 .navbar {
-  height: 100px;
+  height: 7rem;
   width: 100%;
-  position: relative;
-  list-style: none;
 }
 
-.dropdown-menu.show{
-  z-index: 100;
-  background-color: yellow;
-  overflow: hidden;
-  position: absolute;
+#navbarDropdown {
+  height: 6rem;
+  width: 3rem;
+}
 
+.move-left {
+  left: -21.5rem;
+  top: 5rem;
+}
+
+.dropdown-menu {
+  background-color: white;
+  height: 50rem;
+  width: 25rem;
+  a {
+    font-weight: normal;
+    font-size: 5rem;
+  }
+}
+
+.dropdown-item {
+  line-height: 9rem;
+  text-decoration: underline;
+}
+
+.wallet {
+ text-align: left;
+}
+
+.map {
+  text-align: right;
+}
+
+.feed {
+ text-align: left;
+}
+
+.add-a-business {
+  text-align: right;
+}
+
+.font-color-black {
+  color: black;
+  line-height: 9rem;
+  font-size: 5rem;
+  text-decoration: underline;
+  font-weight: normal;
 }

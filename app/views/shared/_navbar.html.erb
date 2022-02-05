@@ -1,13 +1,15 @@
-<div class='navbar'>
+<div class='navbar d-inline-flex justify-content-end'>
   <div class='oy-logo'>
-    <li class="nav-item dropdown">
+    <div class="nav-item dropdown">
       <img id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src= <%= image_path("logo-menu.svg")%>  alt="logo Oy">
-      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href=" <% link_to cards_path %> ">My wallet</a>
-        <a class="dropdown-item" href=" <% link_to businesses_path %> ">Map</a>
-        <a class="dropdown-item" href="#">Feed</a>
-        <a class="dropdown-item" href=" <% link_to new_business_path %>">Add a business</a>
+      <div class="dropdown-menu dropdown-menu-end move-left" aria-labelledby="navbarDropdown">
+        <%= link_to 'my wallet', cards_path, class:"dropdown-item wallet" %>
+        <%= link_to 'map', businesses_path, class:"dropdown-item map" %>
+        <a class="dropdown-item feed" href="#">Feed</a>
+        <%= link_to new_business_path, class:"dropdown-item add-a-business" do %>
+          <h2 class="font-color-black">add a <br> business</h2>
+        <% end %>
       </div>
-    </li>
+    </div>
   </div>
 </div>
