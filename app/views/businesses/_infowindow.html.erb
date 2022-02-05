@@ -1,2 +1,10 @@
-<%= business.name %>
-<%= business.address %>
+
+<div class="card-info-window">
+  <%= link_to business_path(business), class:"all-content-link" do %>
+    <div class="content-info-window">
+      <h3><%= business.name %></h3>
+      <p><%= business.address %></p>
+    </div>
+    <%= cl_image_tag(business.photo.key, width: 200, height: 150, crop: :fill) %>
+  <% end %>
+</div>

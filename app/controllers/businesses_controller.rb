@@ -5,8 +5,8 @@ class BusinessesController < ApplicationController
       {
         lat: business.latitude,
         lng: business.longitude,
-        infowindow: render_to_string(partial: "infowindow", locals: { business: business })
-        # image_url: helpers.asset_url('logo-menu.png')
+        infowindow: render_to_string(partial: "infowindow", locals: { business: business }),
+        image_url: helpers.asset_path("logo-menu.svg")
 
       }
     end
