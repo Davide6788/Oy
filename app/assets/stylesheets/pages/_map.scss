@@ -1,0 +1,35 @@
+.mapboxgl-popup>.mapboxgl-popup-content {
+  color: black;
+  width: 152px;
+  padding: 0;
+}
+
+.content-info-window {
+  padding: 1rem;
+  h3 {
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: underline;
+  }
+  p{
+    color: black;
+    font-weight: normal;
+    text-align: right;
+    font-size: 0.8rem;
+  }
+}
+
+.card-info-window img {
+  height: 80px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  background-size: contain;
+  margin: 0px;
+}
+
+.all-content-link {
+  border: none;
+}

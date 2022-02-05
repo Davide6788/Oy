@@ -29,6 +29,7 @@ document.addEventListener("turbolinks:load", () => {
 });
 
 import mapboxgl from "mapbox-gl"; // or "const mapboxgl = require('mapbox-gl');"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import { initAutocomplete } from "../plugins/init_autocomplete";
 initAutocomplete();
 
@@ -40,8 +41,15 @@ if (mapElement) {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const map = new mapboxgl.Map({
     container: "map", // container ID
-    style: "mapbox://styles/mapbox/streets-v11", // style URL
+    style: "mapbox://styles/victorpln/ckz7eim5k006l14mif3mo037f",
   });
+
+  map.addControl(
+    new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+    })
+  );
 
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
@@ -50,9 +58,12 @@ if (mapElement) {
   };
 
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+    const popup = new mapboxgl.Popup().setHTML(marker.infowindow);
 
-    new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
+    new mapboxgl.Marker()
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
+      .addTo(map);
   });
   fitMapToMarkers(map, markers);
 }
