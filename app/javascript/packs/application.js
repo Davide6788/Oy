@@ -29,6 +29,8 @@ document.addEventListener("turbolinks:load", () => {
 });
 
 import mapboxgl from "mapbox-gl"; // or "const mapboxgl = require('mapbox-gl');"
+import { initAutocomplete } from "../plugins/init_autocomplete";
+initAutocomplete();
 
 const mapElement = document.getElementById("map");
 

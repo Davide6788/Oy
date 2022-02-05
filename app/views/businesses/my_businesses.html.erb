@@ -1,0 +1,7 @@
+<h1>Manage my Businesses</h1>
+
+<ul>
+  <% @businesses.each do |business| %>
+    <li><%= business.name %> - <%= link_to "Customers", my_customers_business_path(business) %></li>
+  <% end %>
+</ul>

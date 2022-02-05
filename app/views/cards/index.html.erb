@@ -1,11 +1,33 @@
-<h2>This is the cards index</h2>
+<div class="cards-wallet d-flex justify-content-center">
+  <div class="cards-wallet-filter-index">
+    <div class="cards-wallet-filter">
+      <%= link_to "Order by points", cards_path(order:'desc') %>
+    </div>
+    <div class="cards-wallet-index">
+      <ul>
+        <% @cards.each do |card| %>
+          <li class="cards-wallet-index-card cards-wallet-index-card-full col-12 ">
+            <div class="wallet-card-title">
+              <%= link_to business_path(card) do %>
 
-<%= link_to "Order by points", cards_path(order:'desc') %>
-
-<ul>
-  <% @cards.each do |card| %>
-    <li>
-      <%= link_to card.business.name, business_path(card) %> - <%= card.points %>
-    </li>
-  <% end %>
-</ul>
+                <h2><%= card.business.name %></h2>
+              <% end %>
+            </div>
+            <div class="cards-wallet-index-card wallet-card-image">
+                <%# cl_image_tag(card.business.photo.key,
+                width: 400, height: 300, crop: :fill) %>
+              <%= cl_image_tag("vu4gbb7i1jbrbcxhqhfb",
+              style:'height:12rem;width:100%;', class: "cards-wallet-image-img") %>
+              <div class="cards-wallet-index-card wallet-card-details col-8 col-md-6">
+                <p class="text-shadow"><%= card.points %>/10</p>
+                <div class="category-label d-inline-flex">
+                  <p><%= card.business.category.category %></p>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

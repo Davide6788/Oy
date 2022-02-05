@@ -1,0 +1,7 @@
+<h1>Manage my Customers</h1>
+
+<ul>
+  <% @business.cards.each do |card| %>
+    <li><%= card.user.code %> - Points: <%= card.points %> - <%= link_to "Add Stamp", add_point_card_path(card), method: :patch, remote: true %></li>
+  <% end %>
+</ul>

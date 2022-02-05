@@ -1,0 +1,33 @@
+.cards-wallet {
+  margin-top: 2rem;
+}
+
+.cards-wallet-index-card {
+  margin-bottom: 2rem;
+}
+
+.cards-wallet-filter {
+  margin-bottom: 2rem;
+}
+
+.wallet-card-image {
+  position:relative;
+}
+
+.wallet-card-details {
+  position:absolute;
+  bottom: 1rem;
+}
+
+.cards-wallet-image-img {
+  object-fit: cover;
+}
+
+li.cards-wallet-index-card.col-12 {
+  padding-left:0;
+  padding-right:0;
+}
+
+.cards-wallet-index-card-full {
+  border-bottom: 1px solid $white;
+}

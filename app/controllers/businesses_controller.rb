@@ -1,17 +1,27 @@
 class BusinessesController < ApplicationController
+
   def index
     @businesses = Business.where.not(latitude: nil, longitude: nil)
     @markers = @businesses.map do |business|
       {
         lat: business.latitude,
         lng: business.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { business: business })
+        infowindow: render_to_string(partial: "infowindow", locals: { business: business }),
+        image_url: helpers.asset_url('logo-menu.png')
 
       }
     end
   end
 
   def show
+    @business = Business.find(params[:id])
+  end
+
+  def my_businesses
+    @businesses = Business.where(user_id: current_user)
+  end
+
+  def my_customers
     @business = Business.find(params[:id])
   end
 
