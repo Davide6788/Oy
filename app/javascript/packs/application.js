@@ -29,6 +29,7 @@ document.addEventListener("turbolinks:load", () => {
 });
 
 import mapboxgl from "mapbox-gl"; // or "const mapboxgl = require('mapbox-gl');"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import { initAutocomplete } from "../plugins/init_autocomplete";
 initAutocomplete();
 
@@ -42,6 +43,13 @@ if (mapElement) {
     container: "map", // container ID
     style: "mapbox://styles/victorpln/ckz7eim5k006l14mif3mo037f",
   });
+
+  map.addControl(
+    new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+    })
+  );
 
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
