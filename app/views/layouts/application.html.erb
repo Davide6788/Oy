@@ -19,7 +19,7 @@
     <% if current_page?('/') %>
       <%= yield %>
     <% else %>
-      <%= render 'shared/sidebar' if current_page?('/') %>
+      <%= render 'shared/sidebar' %>
       <div class="container">
         <%= yield %>
       </div>
