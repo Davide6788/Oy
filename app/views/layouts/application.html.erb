@@ -15,11 +15,15 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/sidebar' %>
 
-    <div class="container">
+    <% if current_page?('/') %>
       <%= yield %>
-    </div>
+    <% else %>
+      <%= render 'shared/sidebar' if current_page?('/') %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <% end %>
     <div class="arrow arrow-container">
       <%= link_to root_path do %>
         <%= image_tag("Vectorarrow", class:"arrow arrow-vector") %>
