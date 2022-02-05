@@ -4,7 +4,6 @@
 
 .cards-wallet-index-card {
   margin-bottom: 2rem;
-  border-bottom: 1px solid $white;
 }
 
 .cards-wallet-filter {
@@ -27,4 +26,8 @@
 li.cards-wallet-index-card.col-12 {
   padding-left:0;
   padding-right:0;
+}
+
+.cards-wallet-index-card-full {
+  border-bottom: 1px solid $white;
 }

@@ -1,0 +1,12 @@
+.arrow {
+  margin-bottom: 2rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.arrow-container{
+  margin-left: 2rem;
+  position: fixed;
+  bottom: 0;
+  filter: drop-shadow(2px 3px 3.5px $black);
+}

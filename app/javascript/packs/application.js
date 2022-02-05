@@ -33,34 +33,26 @@ import { initAutocomplete } from "../plugins/init_autocomplete";
 initAutocomplete();
 
 const mapElement = document.getElementById("map");
-const markers = JSON.parse(mapElement.dataset.markers);
 
-mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-const map = new mapboxgl.Map({
-  container: "map", // container ID
-  style: "mapbox://styles/victorpln/ckz7eim5k006l14mif3mo037f", // style URL
-});
+if (mapElement) {
+  const markers = JSON.parse(mapElement.dataset.markers);
 
-markers.forEach((marker) => {
-  const popup = new mapboxgl.Popup().setHTML(marker.infowindow);
+  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+  const map = new mapboxgl.Map({
+    container: "map", // container ID
+    style: "mapbox://styles/victorpln/ckz7eim5k006l14mif3mo037f"
+  });
 
-  const element = document.createElement("div");
-  element.className = "marker";
-  element.style.backgroundImage = `url('${marker.image_url}')`;
-  element.style.backgroundSize = "contain";
-  element.style.width = "25px";
-  element.style.height = "25px";
+  const fitMapToMarkers = (map, markers) => {
+    const bounds = new mapboxgl.LngLatBounds();
+    markers.forEach((marker) => bounds.extend([marker.lng, marker.lat]));
+    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  };
 
-  new mapboxgl.Marker()
-    .setLngLat([marker.lng, marker.lat])
-    .setPopup(popup)
-    .addTo(map);
-});
+  markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
 
-const fitMapToMarkers = (map, markers) => {
-  const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach((marker) => bounds.extend([marker.lng, marker.lat]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-};
-
-fitMapToMarkers(map, markers);
+    new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
+  });
+  fitMapToMarkers(map, markers);
+}

@@ -28,6 +28,7 @@ Category.create!(category: "butcher")
 
 puts "Creating 20 businesses..."
 
+
 business = Business.create!(
   name: "Surpriz ",
   description: "Restaurant animé servant des döner kebabs façon berlinoise au poulet, dans un espace simple et accueillant.",
@@ -116,6 +117,7 @@ business = Business.create!(
 )
 
 business.photo.attach(io: File.open("app/assets/images/beef.jpeg"), filename: "boucherie.jpeg", content_type: "image/jpeg")
+
 
 puts "Creating 20 reward mechanism..."
 
