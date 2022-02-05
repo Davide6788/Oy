@@ -32,7 +32,7 @@ puts "Creating 20 businesses..."
 20.times do
   Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
   Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
-  Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
+  Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4), host_names: "Matt and Hannah")
   # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
   # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
   # Business.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, category_id: rand(1..10), user_id: rand(1..4))
@@ -79,7 +79,7 @@ puts "Creating 20 cards..."
 
 Card.create!(points: rand(11), business_id: 1, user_id: 1)
 Card.create!(points: rand(11), business_id: 2, user_id: 2)
-Card.create!(points: rand(11), business_id: 3, user_id: 3)
+Card.create!(points: rand(11), business_id: 3, user_id: 4)
 Card.create!(points: rand(11), business_id: 4, user_id: 4)
 Card.create!(points: rand(11), business_id: 5, user_id: 1)
 Card.create!(points: rand(11), business_id: 6, user_id: 2)

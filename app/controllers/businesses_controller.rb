@@ -15,6 +15,9 @@ class BusinessesController < ApplicationController
 
   def show
     @business = Business.find(params[:id])
+    @reward_mechanism = RewardMechanism.find_by(business_id: @business.id)
+    @user = current_user
+    @card = Card.find_by(business_id: @business.id, user_id: @user.id)
   end
 
   def my_businesses
