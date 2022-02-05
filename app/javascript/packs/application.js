@@ -33,6 +33,8 @@ import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import { initAutocomplete } from "../plugins/init_autocomplete";
 initAutocomplete();
 
+const mapElement = document.getElementById("map");
+
 if (mapElement) {
   const markers = JSON.parse(mapElement.dataset.markers);
 
