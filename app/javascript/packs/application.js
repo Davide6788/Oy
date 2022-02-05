@@ -40,7 +40,7 @@ if (mapElement) {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const map = new mapboxgl.Map({
     container: "map", // container ID
-    style: "mapbox://styles/mapbox/streets-v11", // style URL
+    style: "mapbox://styles/victorpln/ckz7eim5k006l14mif3mo037f"
   });
 
   const fitMapToMarkers = (map, markers) => {
