@@ -1,44 +1,7 @@
-// .card-window-container {
-//   width: 175px;
-//   border-radius: 10x;
-// }
 
-// .card-info-window {
-//   font-size: 12px;
-//   line-height: 1;
-//   margin-bottom: 5px;
-//   margin-right: 10px;
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .card-info-window .img-popup {
-//   height: 100%;
-//   width: 175px;
-//   object-fit: cover;
-//   border-radius: 3px;
-//   margin-bottom: 5px;
-// }
-
-// .mapboxgl-popup-content {
-//   position: relative;
-//   background: balck;
-//   border-radius: 3px;
-//   pointer-events: auto;
-//   padding: 0px !important;
-// }
-
-
-
-// .text-popup {
-//   color: #000000;
-// }
-
-// .mapboxgl-marker {
-//   //background-image: url("logo-menu.png");
-//   //background-size: cover;
-//   width: 50px;
-//   height: 50px;
-//   border-radius: 50%;
-//   cursor: pointer;
-// }
+.mapboxgl-control-container > .mapboxgl-ctrl-top-right {
+  position: fixed;
+  top: 30rem;
+  left: 0px;
+  width: 27rem;
+}
