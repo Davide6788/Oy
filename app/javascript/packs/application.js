@@ -40,7 +40,7 @@ if (mapElement) {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const map = new mapboxgl.Map({
     container: "map", // container ID
-    style: "mapbox://styles/victorpln/ckz7eim5k006l14mif3mo037f"
+    style: "mapbox://styles/victorpln/ckz7eim5k006l14mif3mo037f",
   });
 
   const fitMapToMarkers = (map, markers) => {
@@ -50,9 +50,12 @@ if (mapElement) {
   };
 
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+    const popup = new mapboxgl.Popup().setHTML(marker.infowindow);
 
-    new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
+    new mapboxgl.Marker()
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
+      .addTo(map);
   });
   fitMapToMarkers(map, markers);
 }

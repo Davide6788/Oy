@@ -1,12 +1,11 @@
 class BusinessesController < ApplicationController
-
   def index
     @businesses = Business.where.not(latitude: nil, longitude: nil)
     @markers = @businesses.map do |business|
       {
         lat: business.latitude,
         lng: business.longitude,
-        infowindow: render_to_string(partial: "infowindow", locals: { business: business }),
+        infowindow: render_to_string(partial: "infowindow", locals: { business: business })
         # image_url: helpers.asset_url('logo-menu.png')
 
       }
