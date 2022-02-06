@@ -1,7 +1,21 @@
-<h1>Manage my Businesses</h1>
-
-<ul>
-  <% @businesses.each do |business| %>
-    <li><%= business.name %> - <%= link_to "Customers", my_customers_business_path(business) %></li>
-  <% end %>
-</ul>
+<div class="my-businesses d-flex justify-content-center">
+  <div class="my-businesses-full-index">
+    <div class="my-businesses-header">
+      <h1>Manage my Businesses</h1>
+    </div>
+    <div class="my-businesses-index">
+      <ul>
+        <% @businesses.each do |business| %>
+          <li class="my-businesses-index-card-full col-12">
+            <%= link_to business_path(business) do %>
+              <h2><%= business.name %></h2>
+            <% end %>
+            <%= cl_image_tag(business.photo.key,
+            style:'height:12rem;width:100%;', class: "business-card-image-img") %>
+            <%= link_to "#{pluralize( business.cards.count, 'customer' )}", my_customers_business_path(business) %>
+           </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
