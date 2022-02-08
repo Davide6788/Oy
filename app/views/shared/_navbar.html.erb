@@ -1,4 +1,9 @@
 <div class='navbar d-inline-flex justify-content-end'>
+  <% unless current_user.business_ids.empty? %>
+    <div class="navbar-business-link">
+      <%= link_to 'My businesses', my_businesses_businesses_path %>
+    </div>
+  <% end%>
   <div class='oy-logo'>
     <div class="nav-item dropdown">
       <img id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src= <%= image_path("logo-menu.svg")%>  alt="logo Oy">
