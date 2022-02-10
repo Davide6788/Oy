@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.business = @business
     if @post.save
+      PostsChannel.broadcast_to(
+        @post,
+        render_to_string(partial: "posts", locals: { content: @content })
+      )
       redirect_to business_path(@business)
     else
       render :new
@@ -43,5 +47,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:content)
   end
-
 end
