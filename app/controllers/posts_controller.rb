@@ -4,12 +4,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @business = business.find(params[:business_id])
+    @business = Business.find(params[:business_id])
     @post = Post.new
   end
 
   def create
-    @business = business.find(params[:business_id])
+    @business = Business.find(params[:business_id])
     @post = Post.new(post_params)
     @post.business = @business
     if @post.save
@@ -20,22 +20,22 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
     @business_id = @post.business_id
     @post.destroy
-    redirect_to business_path(@business_id)
+    redirect_to posts_path
   end
 
   def edit
-    @business = business.find(params[:business_id])
+    @business = Business.find(params[:business_id])
     @post = Post.find(params[:id])
   end
 
   def update
-    @business = business.find(params[:business_id])
+    @business = Business.find(params[:business_id])
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to post_path(@post)
+    redirect_to posts_path
   end
 
   private
