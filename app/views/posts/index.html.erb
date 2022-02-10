@@ -1,5 +1,24 @@
 <ul>
-  <% @posts.each do |post| %>
-    <li><%= post.content %></li>
+
+
+
+<h1><%= @posts.name %></h1>
+<div id="messages" %>
+  <% @posts.each do |content| %>
+      <i class="author">
+        <span><%= content.business %></span>
+        <small><%= content.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= content.content %></p>
+    </div>
   <% end %>
 </ul>
+
+<div class="container-form-new">
+  <%= simple_form_for [ @business, @post] do |f| %>
+    <div class="create-business-form">
+      <%= f.input :content %>
+      <%= f.submit "Post" %>
+    </div>
+  <% end %>
+</div>

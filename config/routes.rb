@@ -30,7 +30,8 @@ Rails.application.routes.draw do
     member do
       patch :add_point
     end
-  end
+
+  resources :chat
 
   resources :cards, only: [:index, :show,]
   resources :businesses
@@ -41,4 +42,5 @@ Rails.application.routes.draw do
     resources :businesses do
     resources :cards, only: [:new, :create, :edit]
   end
+end
 end
