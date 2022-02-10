@@ -1,15 +1,6 @@
-<ul>
-
-
-
-<h1><%= @posts.name %></h1>
-<div id="messages" %>
-  <% @posts.each do |content| %>
-      <i class="author">
+  <i class="author">
         <span><%= content.business %></span>
         <small><%= content.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
+  </i>
       <p><%= content.content %></p>
-    </div>
-  <% end %>
 </div>
