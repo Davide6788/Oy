@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @business = Business.find(current_user.id)
+    @post = Post.new
   end
 
   def new
