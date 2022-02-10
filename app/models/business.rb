@@ -6,6 +6,7 @@ class Business < ApplicationRecord
   belongs_to :category
   has_many :cards
   has_one_attached :photo
+  has_many :posts
 
   validates :name, :address, :category, presence: true
 end
