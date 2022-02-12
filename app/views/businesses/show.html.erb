@@ -23,8 +23,9 @@
     </div>
     <div class="business-card-button d-flex justify-content-center">
       <button class="directions-btn btn">
-      Get directions
+        <%= link_to 'Get directions', "https://maps.google.com?q=#{@business.latitude},#{@business.longitude}", :target => "_blank"%>
       </button>
+
     </div>
 
     <div class="business-card-footer">
