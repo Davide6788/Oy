@@ -1,15 +1,16 @@
 import consumer from "./consumer";
 
 const initPostsCable = () => {
-  const messagesContainer = document.getElementById("messages");
-  if (messagesContainer) {
-    const id = messagesContainer.dataset.postsId;
+  const postsContainer = document.getElementById("messages");
+  if (postsContainer) {
+    console.log("hey");
+    const id = postsContainer.dataset.chatroomId;
 
     consumer.subscriptions.create(
       { channel: "PostsChannel", id: id },
       {
         received(data) {
-          messagesContainer.insertAdjacentHTML("beforeend", data);
+          postsContainer.insertAdjacentHTML("beforeend", data);
         },
       }
     );
