@@ -3,7 +3,6 @@ import consumer from "./consumer";
 const initChatroomCable = () => {
   const postsContainer = document.getElementById("messages");
   if (postsContainer) {
-    console.log("hey");
     const id = postsContainer.dataset.chatroomId;
 
     consumer.subscriptions.create(
