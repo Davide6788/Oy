@@ -1,0 +1,44 @@
+.author {
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  display: flex;
+}
+
+.author-name {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.business-name {
+  display: flex;
+  text-decoration: underline;
+  color: white;
+}
+
+.business-address {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  font-size: 5px;
+}
+
+img.avatar-business-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.post-message {
+  display: flex;
+  color: white;
+}
+
+.post-content-message {
+  margin-left: 10px;
+}
