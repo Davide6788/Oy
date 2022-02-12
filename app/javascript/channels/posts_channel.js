@@ -16,4 +16,4 @@ const initPostsCable = () => {
   }
 };
 
-export { initChatroomCable };
+export { initPostsCable };
