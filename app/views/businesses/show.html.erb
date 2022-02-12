@@ -63,3 +63,22 @@
     </div>
   </div>
 <% end %>
+
+<% if @business.user == current_user %>
+  <div class="useful-links">
+    <div class="create-a-card">
+      <%= link_to 'Create a card for a client', new_business_card_path(@business) %>
+    </div>
+
+    <div class="edit-my-business">
+      <%= link_to 'Edit my business profile', edit_business_path %>
+    </div>
+
+    <div class="destroy-my-business">
+      <%= link_to "Delete",
+              business_path(@business),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
+<% end %>
