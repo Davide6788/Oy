@@ -1,19 +1,19 @@
    <div class="message_container" id="message-<%=post.id%>">
     <div class= "author">
-      <i class="author">
+      <div class="author">
         <div class= "avatar">
          <%= cl_image_tag(post.business.photo.key,
           style:'', class: "avatar-business-img") %>
         </div>
         <div class= "author-name">
-            <div class= "business-name">
-          <span><%= post.business.name %></span>
-            </div>
-            <div class= "business-address">
-          <p><%= post.business.address %></p>
+          <div class= "business-name">
+            <p class= "bold"><%= post.business.name %></p>
+          </div>
+          <div class="business-address">
+            <p class="light"><%= post.business.address %></p>
           </div>
         </div>
-      </i>
+      </div>
     </div>
       <div class="business-card-image">
         <% unless post.photo.key.nil? %>
@@ -29,6 +29,5 @@
         </div>
       </div>
       <small><%= post.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-
       </div>
     </div>
