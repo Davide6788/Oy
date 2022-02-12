@@ -4,32 +4,36 @@
       <%= link_to "Order by points", cards_path(order:'desc') %>
     </div>
     <div class="cards-wallet-index">
-      <ul>
-        <% @cards.each do |card| %>
-          <li class="cards-wallet-index-card cards-wallet-index-card-full col-12 ">
-            <div class="wallet-card-title">
-              <%= link_to business_path(card) do %>
+      <% if @cards.count==0 %>
+        <p>You don't have any cards yet!</p>
+      <% else %>
+        <ul>
+          <% @cards.each do |card| %>
+            <li class="cards-wallet-index-card cards-wallet-index-card-full col-12 ">
+              <div class="wallet-card-title">
+                <%= link_to business_path(card) do %>
 
-                <h2><%= card.business.name %></h2>
-              <% end %>
-            </div>
-            <div class="cards-wallet-index-card wallet-card-image">
-                <%# cl_image_tag(card.business.photo.key,
-                width: 400, height: 300, crop: :fill) %>
-              <p><%# card.business.photo.key %></p>
+                  <h2><%= card.business.name %></h2>
+                <% end %>
+              </div>
+              <div class="cards-wallet-index-card wallet-card-image">
+                  <%# cl_image_tag(card.business.photo.key,
+                  width: 400, height: 300, crop: :fill) %>
+                <p><%# card.business.photo.key %></p>
 
-              <%= cl_image_tag(card.business.photo.key,
-              style:'height:12rem;width:100%;', class: "cards-wallet-image-img") %>
-              <div class="cards-wallet-index-card wallet-card-details col-8 col-md-6">
-                <p class="text-shadow"><%= card.points %>/10</p>
-                <div class="category-label d-inline-flex">
-                  <p><%= card.business.category.category %></p>
+                <%= cl_image_tag(card.business.photo.key,
+                style:'height:12rem;width:100%;', class: "cards-wallet-image-img") %>
+                <div class="cards-wallet-index-card wallet-card-details col-8 col-md-6">
+                  <p class="text-shadow"><%= card.points %>/10</p>
+                  <div class="category-label d-inline-flex">
+                    <p><%= card.business.category.category %></p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>
