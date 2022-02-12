@@ -1,0 +1,16 @@
+<h1>#<%= @messagerie.business.name %></h1>
+<div id="messages" data-messagerie-id="<%= @messagerie.id %>">
+  <% @messagerie.messages.each do |message| %>
+    <div class="message-container" id="message-<%= message.id %>">
+      <i class="author">
+        <span><%= message.user.code%></span>
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= message.content %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= simple_form_for [ @messagerie, @message ], remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message ##{@messagerie.user.code}" %>
+<% end %>

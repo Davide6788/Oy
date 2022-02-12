@@ -38,4 +38,8 @@ Rails.application.routes.draw do
     resources :businesses do
     resources :cards, only: [:new, :create, :edit]
   end
+
+  resources :messageries, only: :show do
+    resources :messages, only: :create
+  end
 end

@@ -7,6 +7,7 @@ class Business < ApplicationRecord
   has_many :cards, dependent: :destroy
   has_one_attached :photo, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :messageries
 
   validates :name, :address, :category, presence: true
 end
