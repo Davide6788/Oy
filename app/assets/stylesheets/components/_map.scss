@@ -1,7 +1,32 @@
 
 .mapboxgl-control-container > .mapboxgl-ctrl-top-right {
   position: fixed;
-  top: 30rem;
-  left: 0px;
-  width: 27rem;
+  top: 35rem;
+  left: 180px;
+  width: 10rem;
+}
+
+
+.mapboxgl-ctrl {
+  background-color: black;
+  color: white;
+  text-decoration: underline;
+  border-bottom: solid white 2px;
+  border-radius: 0%;
+}
+
+
+.mapboxgl-ctrl-geocoder {
+  input {
+    color: white !important;
+  }
+
+}
+
+input:focus {
+  outline: none !important;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+  display: none !important;
 }
