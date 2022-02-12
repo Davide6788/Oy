@@ -43,11 +43,13 @@ class BusinessesController < ApplicationController
 
   def destroy
     @business = Business.find(params[:id])
+    authorize @business
     @business.destroy
   end
 
   def update
     @business = Business.find(params[:id])
+    authorize @business
     @business.update(params[:business])
   end
 

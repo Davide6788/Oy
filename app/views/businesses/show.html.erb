@@ -7,6 +7,7 @@
       <h2><%= @business.name %></h2>
       <p class="light"><%= @business.address %></p>
     </div>
+    
     <div class="business-card-image">
       <% if @business.photo.key.nil? %>
         <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
@@ -16,6 +17,7 @@
         style:'height:12rem;width:100%;', class: "business-card-image-img") %>
       <% end %>
     </div>
+    
     <div class=business-card-description>
       <p class="light business-card-description-text"><%= @business.description %></p>
     </div>
@@ -24,6 +26,7 @@
       Get directions
       </button>
     </div>
+    
     <div class="business-card-footer">
       <% if @business.host_names %>
         <p class="bold">Owners:</p>
@@ -32,6 +35,7 @@
     </div>
   </div>
 </div>
+
 <% if @card %>
   <div class="stamp-card-full">
     <div class="stamp-card-stamps">
