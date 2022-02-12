@@ -1,31 +1,8 @@
 <ul>
   <h1><%= @posts.name %></h1>
-  <div id="messages" %>
-    <% @posts.each do |content| %>
-      <i class="author">
-        <span><%= content.business %></span>
-        <small><%= content.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= content.content %></p>
-      <div class="business-card-image">
-        <% if content.photo.key.nil? %>
-          <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
-          style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
-        <% else %>
-          <%= cl_image_tag(content.photo.key,
-          style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
-        <% end %>
-       </div>
+  <div id="messages" data-chatroom-id="<%=@chatroom.id %>">
+    <% @posts.each do |post| %>
+      <%= render "posts/post", post: post %>
     <% end %>
-  </div>    
+  </div>
 </ul>
-
-<div class="container-form-new">
-  <%= simple_form_for [ @business, @post] do |f| %>
-    <div class="create-business-form">
-      <%= f.input :content %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Post" %>
-    </div>
-  <% end %>
-</div>

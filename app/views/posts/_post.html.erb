@@ -1,0 +1,13 @@
+   <div class="message_container" id="message-<%=post.id%>">
+      <i class="author">
+        <span><%= post.business %></span>
+        <small><%= post.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= post.content %></p>
+      <div class="business-card-image">
+        <% unless post.photo.key.nil? %>
+          <%= cl_image_tag(post.photo.key,
+          style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
+        <% end %>
+      </div>
+    </div>
