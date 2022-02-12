@@ -1,21 +1,23 @@
 <ul>
-
-
-
-<h1><%= @posts.name %></h1>
-<div id="messages" %>
-  <% @posts.each do |content| %>
+  <h1><%= @posts.name %></h1>
+  <div id="messages" %>
+    <% @posts.each do |content| %>
       <i class="author">
         <span><%= content.business %></span>
         <small><%= content.created_at.strftime("%a %b %e at %l:%M%p") %></small>
       </i>
       <p><%= content.content %></p>
       <div class="business-card-image">
-      <%= cl_image_tag(content.photo.key,
-      style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
-    </div>
-    </div>
-  <% end %>
+        <% if content.photo.key.nil? %>
+          <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
+          style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
+        <% else %>
+          <%= cl_image_tag(content.photo.key,
+          style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
+        <% end %>
+       </div>
+    <% end %>
+  </div>    
 </ul>
 
 <div class="container-form-new">
