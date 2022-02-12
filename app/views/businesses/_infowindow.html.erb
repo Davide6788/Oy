@@ -5,6 +5,12 @@
       <h3><%= business.name %></h3>
       <p><%= business.address %></p>
     </div>
-    <%= cl_image_tag(business.photo.key, width: 200, height: 150, crop: :fill) %>
+    <% if business.photo.key.nil? %>
+      <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
+      width: 200, height: 150, crop: :fill, class: "business-card-image-img") %>
+    <% else %>
+      <%= cl_image_tag(business.photo.key,
+      width: 200, height: 150, crop: :fill, class: "business-card-image-img") %>
+    <% end %>
   <% end %>
 </div>
