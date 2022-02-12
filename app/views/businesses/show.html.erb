@@ -7,7 +7,7 @@
       <h2><%= @business.name %></h2>
       <p class="light"><%= @business.address %></p>
     </div>
-    
+
     <div class="business-card-image">
       <% if @business.photo.key.nil? %>
         <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
@@ -17,7 +17,7 @@
         style:'height:12rem;width:100%;', class: "business-card-image-img") %>
       <% end %>
     </div>
-    
+
     <div class=business-card-description>
       <p class="light business-card-description-text"><%= @business.description %></p>
     </div>
@@ -26,7 +26,7 @@
       Get directions
       </button>
     </div>
-    
+
     <div class="business-card-footer">
       <% if @business.host_names %>
         <p class="bold">Owners:</p>
@@ -64,23 +64,21 @@
   </div>
 <% end %>
 
-<div class="useful-links">
-  <div class="create-a-card">
-    <%= link_to 'Create a card for a client', new_card_business_card_path %>
-  </div>
+<% if @business.user == current_user %>
+  <div class="useful-links">
+    <div class="create-a-card">
+      <%= link_to 'Create a card for a client', new_business_card_path(@business) %>
+    </div>
 
-  <div class="add-stamp-to-card">
-    <%= link_to 'Add a stamp to a card', add_point_card_path %>
-  </div>
+    <div class="edit-my-business">
+      <%= link_to 'Edit my business profile', edit_business_path %>
+    </div>
 
-  <div class="edit-my-business">
-    <%= link_to 'Edit my business profile', edit_card_business_path %>
+    <div class="destroy-my-business">
+      <%= link_to "Delete",
+              business_path(@business),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+    </div>
   </div>
-
-  <div class="destroy-my-business">
-    <%= link_to "Delete",
-            business_path(@business),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-  </div>
-</div>
+<% end %>

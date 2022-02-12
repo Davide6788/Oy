@@ -4,9 +4,9 @@ class Business < ApplicationRecord
   belongs_to :user
   has_one :reward_mechanism
   belongs_to :category
-  has_many :cards
-  has_one_attached :photo
-  has_many :posts
+  has_many :cards, dependent: :destroy
+  has_one_attached :photo, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   validates :name, :address, :category, presence: true
 end
