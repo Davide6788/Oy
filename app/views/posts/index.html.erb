@@ -10,6 +10,10 @@
         <small><%= content.created_at.strftime("%a %b %e at %l:%M%p") %></small>
       </i>
       <p><%= content.content %></p>
+      <div class="business-card-image">
+      <%= cl_image_tag(content.photo.key,
+      style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
+    </div>
     </div>
   <% end %>
 </ul>
@@ -18,6 +22,7 @@
   <%= simple_form_for [ @business, @post] do |f| %>
     <div class="create-business-form">
       <%= f.input :content %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "Post" %>
     </div>
   <% end %>
