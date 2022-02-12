@@ -2,17 +2,7 @@
   <h1><%= @posts.name %></h1>
   <div id="messages" data-chatroom-id="<%=@chatroom.id %>">
     <% @posts.each do |post| %>
-      <%= render "posts/posts", post: post %>
+      <%= render "posts/post", post: post %>
     <% end %>
   </div>
 </ul>
-
-<div class="container-form-new">
-  <%= simple_form_for [ @business, @post], remote: true do |f| %>
-    <div class="create-business-form">
-      <%= f.input :content %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Post" %>
-    </div>
-  <% end %>
-</div>

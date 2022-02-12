@@ -25,10 +25,10 @@ import "bootstrap";
 
 import { initMapbox } from "components/init_map";
 import { initAutocomplete } from "../plugins/init_autocomplete";
-import { initPostsCable } from "../channels/posts_channel";
+import { initChatroomCable } from "../channels/chatroom_channel";
 
 document.addEventListener("turbolinks:load", () => {
   initAutocomplete();
   initMapbox();
-  initPostsCable();
+  initChatroomCable();
 });

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @chatroom = Chatroom.last
+    @chatroom = Chatroom.first
     @posts = Post.all
     @business = Business.find(current_user.id) if user_signed_in?
     @post = Post.new
@@ -13,12 +13,13 @@ class PostsController < ApplicationController
 
   def create
     @business = Business.find(params[:business_id])
+    @chatroom = Chatroom.first
     @post = Post.new(post_params)
     @post.business = @business
     if @post.save
-      PostsChannel.broadcast_to(
-        @posts,
-        render_to_string(partial: "posts", locals: { post: @post })
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "post", locals: { post: @post })
       )
       redirect_to posts_path
     else
