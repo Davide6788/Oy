@@ -1,13 +1,34 @@
    <div class="message_container" id="message-<%=post.id%>">
+    <div class= "author">
       <i class="author">
-        <span><%= post.business %></span>
-        <small><%= post.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        <div class= "avatar">
+         <%= cl_image_tag(post.business.photo.key,
+          style:'', class: "avatar-business-img") %>
+        </div>
+        <div class= "author-name">
+            <div class= "business-name">
+          <span><%= post.business.name %></span>
+            </div>
+            <div class= "business-address">
+          <p><%= post.business.address %></p>
+          </div>
+        </div>
       </i>
-      <p><%= post.content %></p>
+    </div>
       <div class="business-card-image">
         <% unless post.photo.key.nil? %>
           <%= cl_image_tag(post.photo.key,
           style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
         <% end %>
+      <div class= "post-message">
+        <div class= "business-name-message">
+          <span><%= post.business.name %></span>
+        </div>
+        <div class= "post-content-message">
+          <p><%= post.content %></p>
+        </div>
+      </div>
+      <small><%= post.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+
       </div>
     </div>
