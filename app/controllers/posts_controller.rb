@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    @business = Business.find(current_user.id)
+    @business = Business.find(current_user.id) if user_signed_in?
     @post = Post.new
   end
 
