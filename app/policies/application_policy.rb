@@ -9,19 +9,19 @@ class ApplicationPolicy
   end
 
   def index?
-    true
+    false
   end
 
   def show?
-    true
+    false
   end
 
   def create?
-    true
+    false
   end
 
   def new?
-    create?
+    false
   end
 
   def update?
@@ -37,7 +37,7 @@ class ApplicationPolicy
   end
 
   def my_businesses?
-    true
+    false
   end
 
   class Scope

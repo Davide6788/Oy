@@ -4,19 +4,11 @@ class BusinessPolicy < ApplicationPolicy
       scope.all
     end
 
-    def index?
+    def destroy?
       return true
     end
 
-    def my_businesses?
-      return true
-    end
-
-    def new?
-      return true
-    end
-
-    def create?
+    def update?
       return true
     end
   end

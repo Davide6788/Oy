@@ -10,7 +10,6 @@ class BusinessesController < ApplicationController
 
       }
     end
-    authorize @businesses
   end
 
   def show
@@ -22,7 +21,6 @@ class BusinessesController < ApplicationController
 
   def my_businesses
     @businesses = Business.where(user_id: current_user)
-    authorize @businesses
   end
 
   def my_customers
@@ -31,12 +29,10 @@ class BusinessesController < ApplicationController
 
   def new
     @business = Business.new
-    authorize @business
   end
 
   def create
     @business = Business.new(business_params)
-    authorize @business
     @business.user_id = current_user.id
     if @business.save
       redirect_to new_business_reward_mechanism_path(@business)
@@ -47,11 +43,13 @@ class BusinessesController < ApplicationController
 
   def destroy
     @business = Business.find(params[:id])
+    authorize @business
     @business.destroy
   end
 
   def update
     @business = Business.find(params[:id])
+    authorize @business
     @business.update(params[:business])
   end
 
