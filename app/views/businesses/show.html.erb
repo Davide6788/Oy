@@ -51,3 +51,24 @@
     </div>
   </div>
 <% end %>
+
+<div class="useful-links">
+  <div class="create-a-card">
+    <%= link_to 'Create a card for a client', new_card_business_card_path %>
+  </div>
+
+  <div class="add-stamp-to-card">
+    <%= link_to 'Add a stamp to a card', add_point_card_path %>
+  </div>
+
+  <div class="edit-my-business">
+    <%= link_to 'Edit my business profile', edit_card_business_path %>
+  </div>
+
+  <div class="destroy-my-business">
+    <%= link_to "Delete",
+            business_path(@business),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
