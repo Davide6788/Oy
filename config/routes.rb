@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'posts/new'
+  get 'posts/create'
+  get 'posts/edit'
+  get 'posts/update'
+  get 'posts/delete'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -10,6 +15,12 @@ Rails.application.routes.draw do
   end
 
   resources :businesses do
+    resources :posts, only: [:new, :create, :edit, :update, :destroy]
+  end
+
+  resources :posts, only: [:index]
+
+  resources :businesses do
     member do
       get :my_customers
     end
@@ -19,7 +30,8 @@ Rails.application.routes.draw do
     member do
       patch :add_point
     end
-  end
+
+  resources :chat
 
   resources :cards, only: [:index, :show,]
   resources :businesses
@@ -30,4 +42,5 @@ Rails.application.routes.draw do
     resources :businesses do
     resources :cards, only: [:new, :create, :edit]
   end
+end
 end
