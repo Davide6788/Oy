@@ -39,22 +39,8 @@
 
 <% if @card %>
   <div class="stamp-card-full">
-    <div class="stamp-card-stamps">
-      <div class="stamp-card-counter">
-        <ul class="stamp-card-grid">
-          <% @card.points.times do %>
-            <li>
-              <div class="stamp stamp-active"></div>
-            </li>
-          <% end %>
-          <% (@reward_mechanism.counter - @card.points).times do %>
-            <li>
-              <div class="stamp"></div>
-            </li>
-          <% end %>
-        </ul>
-        <h2><%= @card.points %>/<%= @reward_mechanism.counter %></h2>
-      </div>
+    <div id="stamp-container" class="stamp-card-stamps" data-chatroom-id="<%= @chatroom.id %>">
+      <%= render "cards/stamps", card: @card, reward_mechanism: @reward_mechanism, chatroom: @chatroom %>
     </div>
     <div class="stamp-card-details">
       <div class="category-label">
