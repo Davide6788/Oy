@@ -39,7 +39,7 @@
 <% if @card %>
   <div class="stamp-card-full">
     <div class="stamp-card-stamps">
-      <div class="stamp-card-counter">
+      <div class="stamp-card-counter " data-controller="add-stamp-animation">
         <ul class="stamp-card-grid">
           <% @card.points.times do %>
             <li>
@@ -47,7 +47,7 @@
             </li>
           <% end %>
             <li>
-              <div class="stamp stamp-next"></div>
+              <div class="stamp stamp-next" data-add-stamp-animation-target="stamp-next"></div>
             </li>
           <% (@reward_mechanism.counter - @card.points - 1).times do %>
             <li>
