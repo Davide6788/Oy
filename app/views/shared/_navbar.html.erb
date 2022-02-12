@@ -12,7 +12,7 @@
       <div class="dropdown-menu dropdown-menu-end move-left" aria-labelledby="navbarDropdown">
         <%= link_to 'My wallet', cards_path, class:"dropdown-item wallet" %>
         <%= link_to 'Map', businesses_path, class:"dropdown-item map" %>
-        <a class="dropdown-item feed" href="#">Feed</a>
+        <%= link_to 'Feed', posts_path, class:"dropdown-item feed" %>
         <%= link_to new_business_path, class:"dropdown-item add-a-business" do %>
           <h2 class="font-color-black">Add a <br> business</h2>
         <% end %>
