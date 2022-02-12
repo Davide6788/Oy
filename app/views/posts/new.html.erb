@@ -1,0 +1,8 @@
+<div class="container-form-new">
+  <%= simple_form_for [ @business, @post] do |f| %>
+    <div class="create-business-form">
+      <%= f.input :content %>
+      <%= f.submit "Post" %>
+    </div>
+  <% end %>
+</div>
