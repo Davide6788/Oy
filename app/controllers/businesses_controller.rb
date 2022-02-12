@@ -16,7 +16,7 @@ class BusinessesController < ApplicationController
     @business = Business.find(params[:id])
     @reward_mechanism = RewardMechanism.find_by(business_id: @business.id)
     @user = current_user
-    @card = Card.find_by(business_id: @business.id, user_id: @user.id)
+    @card = Card.find_by(business_id: @business.id, user_id: @user.id) if user_signed_in?
   end
 
   def my_businesses
@@ -43,11 +43,13 @@ class BusinessesController < ApplicationController
 
   def destroy
     @business = Business.find(params[:id])
+    authorize @business
     @business.destroy
   end
 
   def update
     @business = Business.find(params[:id])
+    authorize @business
     @business.update(params[:business])
   end
 
