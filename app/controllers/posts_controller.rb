@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   def index
     @chatroom = Chatroom.first
     @posts = Post.all
-    @business = Business.find(current_user.id) if user_signed_in?
     @post = Post.new
   end
 
