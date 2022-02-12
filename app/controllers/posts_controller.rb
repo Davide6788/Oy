@@ -19,7 +19,7 @@ class PostsController < ApplicationController
         @post,
         render_to_string(partial: "posts", locals: { content: @content })
       )
-      redirect_to business_path(@business)
+      redirect_to posts_path
     else
       render :new
     end
@@ -47,6 +47,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :photo)
   end
 end
