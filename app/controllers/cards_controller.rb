@@ -13,10 +13,17 @@ class CardsController < ApplicationController
   end
 
   def add_point
+    @business = Business.find(params[:business_id])
+    @counter = @business.reward_mechanism.counter
     @card = Card.find(params[:id])
-    @card.points += 1
-    @card.save
-    redirect_to my_customers_business_path(@card.business)
+
+    if @card.points < @counter
+      @card.points += 1
+      @card.save
+      redirect_to my_customers_business_path(@card.business)
+    else
+      @card.points = 0
+    end
   end
 
   def new
