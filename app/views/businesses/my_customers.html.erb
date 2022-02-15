@@ -5,7 +5,7 @@
       <h1>Manage my customers</h1>
     </div>
     <div class="my-customers-index">
-      <% @business.cards.each do |card| %>
+      <% @business.cards.order(:id).each do |card| %>
         <div class="my-customer-index-card-full col-12">
           <h2><%= card.user.code %></h2>
           <p>Points: <%= card.points %>/<%= card.business.reward_mechanism.counter %> - <%= link_to "Add Stamp", add_point_card_path(card), method: :patch, remote: true %> <p>
