@@ -1,0 +1,17 @@
+<% if card %>
+  <div id="stamps" class="stamp-card-counter">
+    <ul class="stamp-card-grid">
+      <% card.points.times do %>
+        <li>
+          <div class="stamp stamp-active"></div>
+        </li>
+      <% end %>
+      <% (reward_mechanism.counter - card.points).times do %>
+        <li>
+          <div class="stamp"></div>
+        </li>
+      <% end %>
+    </ul>
+    <h2><%= card.points %>/<%= reward_mechanism.counter %></h2>
+  </div>
+<% end %>

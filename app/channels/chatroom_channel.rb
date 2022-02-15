@@ -4,7 +4,8 @@ class ChatroomChannel < ApplicationCable::Channel
     stream_for chatroom
   end
 
-  def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+  def addStamp
+    card = Card.find(params[:id])
+    stream_for card
   end
 end

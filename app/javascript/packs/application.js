@@ -26,9 +26,11 @@ import "bootstrap";
 import { initMapbox } from "components/init_map";
 import { initAutocomplete } from "../plugins/init_autocomplete";
 import { initChatroomCable } from "../channels/chatroom_channel";
+import { initAddStampCable } from "../channels/add_stamp";
 
 document.addEventListener("turbolinks:load", () => {
   initAutocomplete();
   initMapbox();
   initChatroomCable();
+  initAddStampCable();
 });
