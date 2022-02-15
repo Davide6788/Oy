@@ -34,11 +34,10 @@
 </button>
       <div class= "post-message">
         <div class= "business-name-message">
-          <span><%= post.business.name %></span>
+          <p><span class="business-name-message"><%= post.business.name %></span> <span class="business-content-message"><%= post.content %></span></p>
+
         </div>
-        <div class= "post-content-message">
-          <p><%= post.content %></p>
-        </div>
+
       </div>
       <small><%= post.created_at.strftime("%a %b %e at %l:%M%p") %></small>
       </div>

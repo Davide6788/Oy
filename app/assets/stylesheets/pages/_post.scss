@@ -20,11 +20,16 @@
 }
 
 .business-name {
-  display: flex;
+  //display: flex;
   text-decoration: underline;
   color: white;
 }
 
+.business-content-message {
+  //display: flex;
+  color: grey;
+  margin-left: 5px;
+}
 .business-address {
   display: flex;
   justify-content: center;
@@ -39,7 +44,7 @@ img.avatar-business-img {
 }
 
 .post-message {
-  display: flex;
+  //display: flex;
   color: white;
   margin-top: 10px;
 }
@@ -74,7 +79,7 @@ img.avatar-business-img {
   font-size: 25px;
   color: rgb(255, 255, 255);
   margin-bottom: 20px;
-  margin-top: -13px;
+  margin-top: -5px;
   margin-left: -5px;
 }
 .btn-like.liked {
