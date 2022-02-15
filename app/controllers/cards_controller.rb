@@ -30,6 +30,10 @@ class CardsController < ApplicationController
       )
       redirect_to my_customers_business_path(@card.business)
     end
+
+    if @card.points == @counter
+      flash.now[:notice] = "Congrats ! Your reward is #{@business.reward.discount}"
+    end
   end
 
   def new
