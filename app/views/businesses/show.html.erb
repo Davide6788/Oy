@@ -37,19 +37,21 @@
   </div>
 </div>
 
-<% if @card %>
-  <div class="stamp-card-full">
-    <div id="stamp-container" class="stamp-card-stamps" data-chatroom-id="<%= @chatroom.id %>">
+<div class="stamp-card-full">
+  <div id="stamp-container" class="stamp-card-stamps" data-chatroom-id="<%= @chatroom.id %>">
+    <%# if @card %>
       <%= render "cards/stamps", card: @card, reward_mechanism: @reward_mechanism, chatroom: @chatroom %>
-    </div>
+    <%# end %>
+  </div>
+  <% if @card %>
     <div class="stamp-card-details">
       <div class="category-label">
         <p>Reward</p>
       </div>
         <p><%= @reward_mechanism.discount %></p>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <% if @business.user == current_user %>
   <div class="useful-links">
