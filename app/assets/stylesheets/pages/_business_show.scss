@@ -37,6 +37,18 @@
   background-color: $white;
 }
 
+#stamp-most-recent {
+  animation: fadein 2s;
+}
+@keyframes fadein {
+  from {  opacity: 0;
+          height: 2.75rem;
+          width: 2.75rem;}
+  to   {  opacity: 1;
+          height: 1.75rem;
+          width: 1.75rem;}
+}
+
 .stamp-card-stamps {
 
 }
