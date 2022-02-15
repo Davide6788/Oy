@@ -27,10 +27,12 @@ import { initMapbox } from "components/init_map";
 import { initAutocomplete } from "../plugins/init_autocomplete";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initAddStampCable } from "../channels/add_stamp";
+import { initMessageroomCable } from "../channels/messageroom_channel";
 
 document.addEventListener("turbolinks:load", () => {
   initAutocomplete();
   initMapbox();
   initChatroomCable();
   initAddStampCable();
+  initMessageroomCable();
 });
