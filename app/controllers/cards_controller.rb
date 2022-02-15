@@ -14,9 +14,17 @@ class CardsController < ApplicationController
 
   def add_point
     @card = Card.find(params[:id])
-    @chatroom = Chatroom.find(2)
+
+    @business = @card.business
     @reward_mechanism = RewardMechanism.find_by(business_id: @card.business_id)
-    @card.points += 1
+    @counter = @business.reward_mechanism.counter
+    if @card.points < @counter
+      @card.points += 1
+    else
+      @card.points = 0
+    end
+    
+    @chatroom = Chatroom.find(2)
     if @card.save
       ChatroomChannel.broadcast_to(
         @chatroom,
@@ -24,6 +32,7 @@ class CardsController < ApplicationController
       )
       redirect_to my_customers_business_path(@card.business)
     end
+
   end
 
   def new
