@@ -1,3 +1,12 @@
-<% @messagerooms.each do |chat| %>
-  <%= chat.business.name %>
-<% end %>
+<ul>
+  <% @messagerooms.each do |chat| %>
+    <li>
+      <div class="chat-container">
+        <div class= "avatar-chat">
+          <%= cl_image_tag(chat.business.photo.key, style:'', class: "avatar-business-img") %>
+        </div>
+        <%= link_to chat.business.name, messageroom_path(chat) %>
+      </div>
+    </li>
+  <% end %>
+</ul>
