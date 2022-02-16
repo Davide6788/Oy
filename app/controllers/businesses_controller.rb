@@ -7,7 +7,6 @@ class BusinessesController < ApplicationController
         lng: business.longitude,
         infowindow: render_to_string(partial: "infowindow", locals: { business: business }),
         image_url: helpers.asset_path("logo-menu.svg")
-
       }
     end
   end

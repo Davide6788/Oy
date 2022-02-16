@@ -29,6 +29,7 @@ import { initChatroomCable } from "../channels/chatroom_channel";
 import { initAddStampCable } from "../channels/add_stamp";
 
 document.addEventListener("turbolinks:load", () => {
+  // Rails.refreshCSRFTokens()
   initAutocomplete();
   initMapbox();
   initChatroomCable();

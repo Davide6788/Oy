@@ -30,7 +30,15 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infowindow);
 
-      new mapboxgl.Marker()
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundColor = `$light-gray`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '1rem';
+      element.style.height = '2rem';
+
+      new mapboxgl.Marker(element)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(map);
