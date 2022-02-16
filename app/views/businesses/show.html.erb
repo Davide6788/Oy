@@ -51,6 +51,11 @@
         <p><%= @reward_mechanism.discount %></p>
     </div>
   <% end %>
+  <% flash.each do |notice, msg| %>
+    <div class="">
+      <%= msg %>
+    </div>
+  <% end %>
 </div>
 
 <% if @business.user == current_user %>

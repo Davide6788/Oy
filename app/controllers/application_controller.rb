@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
+  add_flash_types :notice
   ##include Pundit
 
   ##after_action :verify_authorized, except: [:index], unless: :skip_pundit?

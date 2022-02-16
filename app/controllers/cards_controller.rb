@@ -30,9 +30,16 @@ class CardsController < ApplicationController
       )
       redirect_to my_customers_business_path(@card.business)
     end
+  end
+
+  def reward_alert
+    @card = Card.find(params[:id])
+    @business = @card.business
+    @reward_mechanism = RewardMechanism.find_by(business_id: @card.business_id)
+    @counter = @business.reward_mechanism.counter
 
     if @card.points == @counter
-      flash.now[:notice] = "Congrats ! Your reward is #{@business.reward.discount}"
+      redirect_to business_path, notice: "Congrats ! You've reached your reward : #{@reward_mechanism.discount}"
     end
   end
 

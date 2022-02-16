@@ -1,9 +1,3 @@
 <h2>This is the card show</h2>
 
 <p><%= link_to @card.business.name, business_path(@card) %> - <%= @card.points %></p>
-
-<% flash.each do |notice, msg| %>
-  <div class="">
-    <%= msg %>
-  </div>
-<% end %>
