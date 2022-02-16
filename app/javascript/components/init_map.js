@@ -32,11 +32,20 @@ const initMapbox = () => {
 
       const element = document.createElement('div');
       element.className = 'marker';
-      element.style.backgroundImage = `url('${marker.image_url}')`;
-      element.style.backgroundColor = `$light-gray`;
-      element.style.backgroundSize = 'contain';
-      element.style.width = '1rem';
+      const markerPoints = document.createElement('p');
+      markerPoints.className = 'marker-points'
+      markerPoints.textContent = `${marker.card_points != null ? marker.card_points : 0}/${marker.card_total != null ? marker.card_total : 10}`;
+      const markerLogo = document.createElement('img');
+      markerLogo.className = 'marker-logo'
+      markerLogo.src = `${marker.image_url}`;
+      element.appendChild(markerLogo);
+      element.appendChild(markerPoints);
+      // element.style.backgroundImage = `url('${marker.image_url}')`;
+
+      // element.style.backgroundSize = 'contain';
+      element.style.width = '2rem';
       element.style.height = '2rem';
+      element.style.borderRadius = '50%';
 
       new mapboxgl.Marker(element)
         .setLngLat([marker.lng, marker.lat])
