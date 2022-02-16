@@ -1,8 +1,11 @@
 <div class="business-card-full d-flex justify-content-center">
   <div class="business-card-details col-12 col-sm-10 col-md-8">
     <div class="business-card-header">
-      <div class="category-label d-inline-flex">
-        <p><%= @business.category.category %></p>
+      <div class="icons-container">
+        <div class="category-label d-inline-flex">
+          <p><%= @business.category.category %></p>
+        </div>
+        <%= link_to business_messagerooms_path(@business), method: :post do %><i class="fas fa-paper-plane" style="color: white"></i><% end %>
       </div>
       <h2><%= @business.name %></h2>
       <p class="light"><%= @business.address %></p>
