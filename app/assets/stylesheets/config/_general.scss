@@ -10,3 +10,7 @@ li {
 p {
   margin-bottom: 0;
 }
+
+a:focus-visible {
+  outline: 0;
+}
