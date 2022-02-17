@@ -1,17 +1,4 @@
-<h1>Create your business</h1>
-
-<div class="container-form-new">
-  <%= simple_form_for [ Business.new ] do |f| %>
-    <div class="create-business-form">
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.association :category, label_method: :category %>
-      <%= f.input :host_names %>
-      <%= f.input :description %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Create my business", class: "new-business-btn" %>
-    </div>
-  <% end %>
+<div class='fixed-background'>
 </div>
 
 
