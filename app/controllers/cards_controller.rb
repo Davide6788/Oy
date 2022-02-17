@@ -32,16 +32,16 @@ class CardsController < ApplicationController
     end
   end
 
-  def reward_alert
-    @card = Card.find(params[:id])
-    @business = @card.business
-    @reward_mechanism = RewardMechanism.find_by(business_id: @card.business_id)
-    @counter = @business.reward_mechanism.counter
+  # def reward_alert
+  #   @card = Card.find(params[:id])
+  #   @business = @card.business
+  #   @reward_mechanism = RewardMechanism.find_by(business_id: @card.business_id)
+  #   @counter = @business.reward_mechanism.counter
 
-    if @card.points == @counter
-      redirect_to business_path, notice: "Congrats ! You've reached your reward : #{@reward_mechanism.discount}"
-    end
-  end
+  #   if @card.points == @counter
+  #     redirect_to business_path, notice: "Congrats ! You've reached your reward : #{@reward_mechanism.discount}"
+  #   end
+  # end
 
   def new
     @business = Business.find(params[:business_id])
