@@ -15,6 +15,7 @@ Business.destroy_all
 Category.destroy_all
 User.destroy_all
 Chatroom.create(name: "general")
+Chatroom.create(name: "stamp")
 
 puts "Creating 4 users..."
 hannah = User.create!(email: 'hannah@test.com', password: 'hannah', code: "hannah")
