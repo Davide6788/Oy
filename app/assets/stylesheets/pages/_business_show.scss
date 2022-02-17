@@ -39,11 +39,15 @@
 
 #stamp-most-recent {
   animation: fadein 2s;
+  position:absolute;
 }
 @keyframes fadein {
   from {  opacity: 0;
           height: 2.75rem;
-          width: 2.75rem;}
+          width: 2.75rem;
+          margin-left: -0.5rem;
+          margin-top: -0.5rem;
+          }
   to   {  opacity: 1;
           height: 1.75rem;
           width: 1.75rem;}
@@ -72,15 +76,15 @@
   text-align: center;
 }
 
-.directions-btn {
-  transition: none;
-  font-weight: 100;
-  color: white;
-  border: 1px solid;
-  border-radius: 0;
-  padding: 0.5rem 4rem;
-  margin-top: 2rem;
-}
+// .directions-btn {
+//   transition: none;
+//   font-weight: 100;
+//   color: white;
+//   border: 1px solid;
+//   border-radius: 0;
+//   padding: 0.5rem 4rem;
+//   margin-top: 2rem;
+// }
 
 .business-card-description-text {
   margin-top: 0.5rem;
