@@ -1,19 +1,19 @@
 <div class="sidebar d-flex align-items-center">
   <ul class="sidebar-nav d-flex flex-column justify-content-center">
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light <%= 'active' if current_page?('/businesses/new') %>">add a shop</p>
+      <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/businesses/new') %>>add a shop</p>
     </li>
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light <%= 'active' if current_page?('/businesses/:id') %>">shop</p>
+      <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/businesses/:id') %>>shop</p>
     </li>
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light <%= 'active' if current_page?('/cards') %>">wallet</p>
+      <p class="sidebar-nav-text light" <%= 'id=active'  if current_page?('/cards') %>>wallet</p>
     </li>
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light <%= 'active' if current_page?('/users/sign_in') %>">login</p>
+      <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/users/sign_in') %>>login</p>
     </li>
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light <%= 'active' if current_page?('/') %>">home</p>
+      <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/') %>>home</p>
     </li>
   </ul>
 </div>
