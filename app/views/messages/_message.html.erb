@@ -1,24 +1,27 @@
-
 <% if message.user == current_user %>
 
   <div class="message-container-chat" id="message-<%= message.id %>">
-    <div class="message-box">
-      <p class="message-text"><%= message.content %></p>
+    <div class="message-box-sender">
+      <p class="message-text-sender"><%= message.content %></p>
     </div>
-    <i class="author">
-      <span>sent by <%= message.user.code %>, <%= message.created_at.strftime("%a %b %e at %l:%M%p") %></span>
-    </i>
+    <div class="author-sender">
+      <i>
+        <span><%= message.created_at.strftime("%b %e at %k:%M") %></span>
+      </i>
+    </div>
   </div>
 
 <% else %>
 
-  <div class="message-container" id="message-<%= message.id %>">
-    <div class="message">
-      <p class="message"><%= message.content %></p>
+  <div class="message-container-chat" id="message-<%= message.id %>">
+    <div class="message-box-receiver">
+      <p class="message-text-receiver"><%= message.content %></p>
     </div>
-    <i class="author">
-      <span>sent by <%= message.user.code %>, <%= message.created_at.strftime("%a %b %e at %l:%M%p") %></span>
-    </i>
+    <div class="author-receiver">
+      <i>
+        <span><%= message.created_at.strftime("%b %e at %l:%M%p") %></span>
+      </i>
+    </div>
   </div>
 
 <% end %>
