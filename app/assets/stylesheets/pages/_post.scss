@@ -1,3 +1,7 @@
+.message_container {
+  margin-top: 20px;
+}
+
 .author {
   display: flex;
   justify-content: space-between;
@@ -16,11 +20,16 @@
 }
 
 .business-name {
-  display: flex;
+  //display: flex;
   text-decoration: underline;
   color: white;
 }
 
+.business-content-message {
+  //display: flex;
+  color: grey;
+  margin-left: 5px;
+}
 .business-address {
   display: flex;
   justify-content: center;
@@ -35,10 +44,77 @@ img.avatar-business-img {
 }
 
 .post-message {
-  display: flex;
+  //display: flex;
   color: white;
+  margin-top: 10px;
 }
 
 .post-content-message {
   margin-left: 10px;
+  p {
+    color: grey;
+  }
 }
+
+:root {
+  --red: rgb(209, 3, 3);
+  --white: #fff;
+  --black: #000;
+}
+.btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50px;
+  height: 20px;
+  outline: 0;
+  color: #000;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-like {
+  padding: 1.5rem 1.5rem 1.5rem 6rem;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  margin-top: -5px;
+  margin-left: -5px;
+}
+.btn-like.liked {
+  background: var(--red);
+  border-color: var(--red);
+}
+/*-- Button Icon -- */
+.btn-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+}
+.btn:hover .btn-icon {
+  color: var(--red);
+}
+.btn.liked:hover .btn-icon {
+  color: var(--black);
+}
+.liked .btn--icon-default {
+  transform: rotate(-90deg);
+}
+.btn:not(.liked).btn--icon-liked {
+  transform: rotate(-90deg);
+}
+.liked .btn--icon-default,
+.btn--icon-liked {
+  opacity: 0;
+  color: #fff;
+  position: absolute;
+}
+.btn--icon-default,
+.liked .btn--icon-liked {
+  left: 0.5rem;
+}
+/*-- Button Content -- */
+
+//https://javascript.plainenglish.io/build-a-custom-like-button-with-html-css-and-vanilla-javascript-b81fa4b00aad
