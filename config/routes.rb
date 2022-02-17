@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   end
 
   resources :businesses do
+    member do
+      get :my_messagerooms
+    end
+  end
+
+  resources :businesses do
     resources :messagerooms, only: [:create]
   end
 

@@ -1,0 +1,9 @@
+<ul>
+  <% @messagerooms.each do |chat| %>
+    <li>
+      <div class="chat-container">
+        <%= link_to chat.user.code, messageroom_path(chat) %>
+      </div>
+    </li>
+  <% end %>
+</ul>

@@ -58,7 +58,7 @@
 
   <div class="useful-links">
     <div class="create-a-card">
-      <%= link_to 'Send Direct Message', business_messagerooms_path(@business), method: :post %>
+      <%= link_to 'My Conversations', my_messagerooms_business_path(@business) %>
     </div>
   </div>
 <% if @business.user == current_user %>
