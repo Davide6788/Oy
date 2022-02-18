@@ -1,7 +1,7 @@
 <ul>
   <h1><%= @posts.name %></h1>
   <div id="messages" data-chatroom-id="<%=@chatroom.id %>">
-    <% @posts.each do |post| %>
+    <% @posts.reverse.each do |post| %>
       <%= render "posts/post", post: post %>
     <% end %>
   </div>

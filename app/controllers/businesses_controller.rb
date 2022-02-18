@@ -1,13 +1,22 @@
 class BusinessesController < ApplicationController
   def index
     @businesses = Business.where.not(latitude: nil, longitude: nil)
+    @user = current_user
+    @cards = Card.where(user_id: @user)
     @markers = @businesses.map do |business|
+      if @cards.include?(Card.find_by(business_id: business.id))
+        @card = Card.find_by(business_id: business.id)
+        @card_points = @card.points
+        @card_total = business.reward_mechanism.counter
+      end
       {
         lat: business.latitude,
         lng: business.longitude,
         infowindow: render_to_string(partial: "infowindow", locals: { business: business }),
-        image_url: helpers.asset_path("logo-menu.svg")
-
+        image_url: helpers.asset_path("logo-menu.svg"),
+        card_nil: @card.nil?,
+        card_points: @card_points,
+        card_total: @card_total
       }
     end
   end

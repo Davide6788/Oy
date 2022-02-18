@@ -30,7 +30,24 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infowindow);
 
-      new mapboxgl.Marker()
+      const element = document.createElement('div');
+      element.className = 'marker';
+      const markerPoints = document.createElement('p');
+      markerPoints.className = 'marker-points'
+      markerPoints.textContent = `${marker.card_points != null ? marker.card_points : 0}/${marker.card_total != null ? marker.card_total : 10}`;
+      const markerLogo = document.createElement('img');
+      markerLogo.className = 'marker-logo'
+      markerLogo.src = `${marker.image_url}`;
+      element.appendChild(markerLogo);
+      element.appendChild(markerPoints);
+      // element.style.backgroundImage = `url('${marker.image_url}')`;
+
+      // element.style.backgroundSize = 'contain';
+      element.style.width = '2rem';
+      element.style.height = '2rem';
+      element.style.borderRadius = '50%';
+
+      new mapboxgl.Marker(element)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(map);

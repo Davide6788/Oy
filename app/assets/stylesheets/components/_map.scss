@@ -30,3 +30,19 @@ input:focus {
 .mapboxgl-ctrl-geocoder--button {
   display: none !important;
 }
+
+.marker {
+  background-color: $black;
+  text-align: center;
+}
+
+.marker-points {
+  color: $white;
+    font-size: .4rem;
+    line-height: 1px;
+}
+
+img.marker-logo {
+    height: 1.5rem;
+    color: $black;
+}

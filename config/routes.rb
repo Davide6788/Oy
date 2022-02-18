@@ -10,6 +10,17 @@ Rails.application.routes.draw do
   end
 
   resources :businesses do
+    resources :messagerooms, only: [:create]
+  end
+
+  resources :messagerooms, only: [:index, :show]
+
+  resources :messageroom, only: :show do
+    resources :messages, only: :create
+  end
+
+
+  resources :businesses do
     resources :posts, only: [:new, :create, :edit, :update]
   end
 

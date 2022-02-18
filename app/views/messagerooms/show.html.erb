@@ -1,0 +1,10 @@
+<h1>#<%= @messageroom.name %></h1>
+<div id="messages" data-messageroom-id="<%= @messageroom.id %>">
+  <% @messageroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+  <% end %>
+</div>
+
+<%= simple_form_for [ @messageroom, @message ], remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message ##{@messageroom.name}" %>
+<% end %>
