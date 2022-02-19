@@ -37,6 +37,7 @@
   background-color: $white;
 }
 
+
 #stamp-most-recent {
   animation: fadein 2s;
   position:absolute;
@@ -53,9 +54,7 @@
           width: 1.75rem;}
 }
 
-.stamp-card-stamps {
 
-}
 
 .stamp-card-counter {
   text-align: center;
@@ -90,9 +89,28 @@
   margin-top: 0.5rem;
 }
 
+
+.alert-info {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 0%;
+  text-align: center;
+  height: 156px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.alert {
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  z-index: 1000;
+
 .icons-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 00.75rem;
   align-items: center;
+
 }

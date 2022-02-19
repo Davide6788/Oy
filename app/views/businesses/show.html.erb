@@ -51,7 +51,12 @@
       <div class="category-label">
         <p>Reward</p>
       </div>
-        <p><%= @reward_mechanism.discount %></p>
+        <p class="reward-discount"><%= @reward_mechanism.discount %></p>
+    </div>
+  <% end %>
+  <% flash.each do |notice, msg| %>
+    <div class="">
+      <%= msg %>
     </div>
   <% end %>
 </div>
