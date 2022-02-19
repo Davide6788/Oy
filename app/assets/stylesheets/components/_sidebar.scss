@@ -4,6 +4,7 @@
   position: fixed;
   z-index: -99;
   top: 0rem;
+  color: $dark-gray;
 }
 
 .sidebar-nav {
@@ -14,7 +15,7 @@
 .sidebar-nav-text {
   transform: rotate(-90deg);
   white-space:nowrap;
-  color: $light-gray;
+  color: $dark-gray;
 }
 
 .sidebar-nav-location {
@@ -27,6 +28,6 @@
   align-items: center;
 }
 
-.active {
+#active {
   color: $white;
 }
