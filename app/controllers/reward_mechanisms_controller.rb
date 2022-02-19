@@ -9,7 +9,7 @@ class RewardMechanismsController < ApplicationController
     @business = Business.find(params[:business_id])
     @reward_mechanism.business = @business
     if @reward_mechanism.save
-      redirect_to businesses_path
+      redirect_to business_path(@business)
     else
       render :new
     end
