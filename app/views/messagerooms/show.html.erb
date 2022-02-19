@@ -1,4 +1,4 @@
-<h1>#<%= @messageroom.name %></h1>
+<h1><%= @messageroom.business.name %></h1>
 <div id="messages" data-messageroom-id="<%= @messageroom.id %>">
   <% @messageroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>

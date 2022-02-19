@@ -9,14 +9,19 @@ class MessageroomsController < ApplicationController
   end
 
   def create
-    @business = Business.find(params[:business_id])
-    @messageroom = Messageroom.new
-    @messageroom.user_id = current_user.id
-    @messageroom.business_id = @business.id
-    if @messageroom.save
-      redirect_to messageroom_path(@messageroom)
+    if Messageroom.find_by(user_id: current_user.id, business_id: params[:business_id]).nil?
+      @business = Business.find(params[:business_id])
+      @messageroom = Messageroom.new
+      @messageroom.user_id = current_user.id
+      @messageroom.business_id = @business.id
+      if @messageroom.save
+        redirect_to messageroom_path(@messageroom)
+      else
+        render :new
+      end
     else
-      render :new
+      @messageroom = Messageroom.find_by(user_id: current_user.id, business_id: params[:business_id])
+      redirect_to messageroom_path(@messageroom)
     end
   end
 end

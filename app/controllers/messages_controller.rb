@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     if @message.save
       MessageroomChannel.broadcast_to(
         @messageroom,
-        render_to_string(partial: "message", locals: { message: @message })
+        render_to_string(partial: "message", locals: { message: @message, current_user: nil })
       )
       redirect_to messageroom_path(@messageroom, anchor: "message-#{@message.id}")
     else

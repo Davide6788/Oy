@@ -40,6 +40,10 @@ class BusinessesController < ApplicationController
     # authorize @business
   end
 
+  def my_messagerooms
+    @messagerooms = Messageroom.where(business_id: params[:id])
+  end
+
   def new
     @business = Business.new
     # authorize @business
