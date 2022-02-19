@@ -1,27 +1,24 @@
 <div class="sidebar d-flex align-items-center">
   <ul class="sidebar-nav d-flex flex-column justify-content-center">
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/businesses/new') %>>add a shop</p>
+      <p class="sidebar-nav-text light" <%= 'id=active' if controller_name == "businesses" && action_name == "new" %>>add a shop</p>
     </li>
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light" <%= 'id=active' if current_page?(controller: "businesses", action:"show") %>>shop</p>
+      <p class="sidebar-nav-text light" <%= 'id=active' if controller_name == "businesses" && action_name == "show" %>>shop</p>
+      <%# <p class="sidebar-nav-text light" <%= 'id=active' if current_page?(controller: "businesses", action: "my_businesses") || current_page?(controller: "businesses", action: "show") >shop</p> %>
     </li>
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light" <%= 'id=active'  if current_page?('/cards') %>>wallet</p>
+      <p class="sidebar-nav-text light" <%= 'id=active'  if controller_name == "cards" && action_name == "index" %>>wallet</p>
     </li>
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light" <%= 'id=active'  if current_page?('/businesses') %>>map</p>
+      <p class="sidebar-nav-text light" <%= 'id=active'  if controller_name == "businesses" && action_name == "index" %>>map</p>
     </li>
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light" <%= 'id=active'  if current_page?('/posts') %>>feed</p>
+      <p class="sidebar-nav-text light" <%= 'id=active'  if controller_name == "posts" && action_name == "index" %>>feed</p>
     </li>
-    <% if current_user.business_ids != [] %>
-      <li class="sidebar-nav-location">
-        <p class="sidebar-nav-text light" <%= 'id=active'  if current_page?(controller: "businesses", action:"my_businesses") %>>my businesses</p>
-      </li>
-    <% end %>
+
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/users/sign_in') %>>login</p>
+      <p class="sidebar-nav-text light" <%= 'id=active' if controller_name == "sessions" && action_name == "new" %>>login</p>
     </li>
     <li class="sidebar-nav-location">
       <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/') %>>home</p>
