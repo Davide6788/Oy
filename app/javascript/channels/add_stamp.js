@@ -4,12 +4,12 @@ import consumer from "./consumer";
 const initAddStampCable = () => {
   const stampContainer = document.getElementById("stamp-container");
   if (stampContainer) {
-    const id = stampContainer.dataset.chatroomId;
+    const id = stampContainer.dataset.userId;
     const reward = stampContainer.dataset.reward;
     const counter = stampContainer.dataset.counter;
 
     consumer.subscriptions.create(
-      { channel: "ChatroomChannel", id: id },
+      { channel: "UserChannel", id: id },
       {
         received(data) {
 
