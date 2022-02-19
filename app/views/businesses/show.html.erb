@@ -41,7 +41,7 @@
 </div>
 
 <div class="stamp-card-full">
-  <div id="stamp-container" class="stamp-card-stamps" data-chatroom-id="<%= @chatroom.id %>">
+  <div id="stamp-container" class="stamp-card-stamps" data-counter="<%=@reward_mechanism.counter%>" data-reward="<%=@reward_mechanism.discount%>" data-chatroom-id="<%= @chatroom.id %>">
     <%# if @card %>
       <%= render "cards/stamps", card: @card, reward_mechanism: @reward_mechanism, chatroom: @chatroom %>
     <%# end %>
