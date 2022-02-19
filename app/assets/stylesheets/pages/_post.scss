@@ -12,16 +12,16 @@
   justify-content: space-between;
 }
 
-.avatar {
+.post-avatar {
   display: flex;
 }
 
-.author-name {
+.author-details {
   display: flex;
   justify-content: center;
   text-decoration: underline;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .business-name {
@@ -66,26 +66,43 @@ img.avatar-business-img {
   --white: #fff;
   --black: #000;
 }
-.btn {
+button.btn.btn-like {
+  padding:0;
+}
+.like-button {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 50px;
-  height: 20px;
-  outline: 0;
-  color: #000;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
+  .btn {
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .btn-like {
+    color: $white;
+  }
+  button:focus {
+    box-shadow: none;
+  }
+}
+.btn {
+  // margin-top: 10px;
+  // margin-bottom: 10px;
+  // width: 50px;
+  // height: 20px;
+  // outline: 0;
+  // color: #000;
+  // cursor: pointer;
+  // position: relative;
+  // display: flex;
+  // justify-content: space-between;
 }
 
 .btn-like {
-  padding: 1.5rem 1.5rem 1.5rem 6rem;
-  font-size: 25px;
-  color: rgb(255, 255, 255);
-  margin-bottom: 20px;
-  margin-top: -5px;
-  margin-left: -5px;
+  // padding: 1.5rem 1.5rem 1.5rem 6rem;
+  // font-size: 25px;
+  // color: rgb(255, 255, 255);
+  // margin-bottom: 20px;
+  // margin-top: -5px;
+  // margin-left: -5px;
 }
 .btn-like.liked {
   background: var(--red);
@@ -93,10 +110,10 @@ img.avatar-business-img {
 }
 /*-- Button Icon -- */
 .btn-icon {
-  display: inline-block;
+  // display: inline-block;
   width: 14px;
   height: 14px;
-  position: absolute;
+  // position: absolute;
 }
 .btn:hover .btn-icon {
   color: var(--red);
@@ -114,7 +131,7 @@ img.avatar-business-img {
 .btn--icon-liked {
   opacity: 0;
   color: #fff;
-  position: absolute;
+  // position: absolute;
 }
 .btn--icon-default,
 .liked .btn--icon-liked {
@@ -122,4 +139,4 @@ img.avatar-business-img {
 }
 /*-- Button Content -- */
 
-//https://javascript.plainenglish.io/build-a-custom-like-button-with-html-css-and-vanilla-javascript-b81fa4b00aad
+// https://javascript.plainenglish.io/build-a-custom-like-button-with-html-css-and-vanilla-javascript-b81fa4b00aad
