@@ -1,5 +1,4 @@
 class CardsController < ApplicationController
-
   def index
     if params[:order] == 'desc'
       @cards = Card.where(user_id: current_user).order(points: :desc)
@@ -58,6 +57,7 @@ class CardsController < ApplicationController
       UserChannel.broadcast_to(
         @card.user,
         render_to_string(partial: "stamps", locals: { user: @user, card: @card, reward_mechanism: @reward_mechanism })
+
       )
       redirect_to my_customers_business_path(@card.business)
     else

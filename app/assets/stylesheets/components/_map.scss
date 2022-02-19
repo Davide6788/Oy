@@ -1,12 +1,17 @@
-
 .mapboxgl-control-container > .mapboxgl-ctrl-top-right {
   position: fixed;
-  top: 35rem;
-  left: 180px;
+  //top: 35rem;
+  top: 4rem;
+
+  left: 154px;
   width: 10rem;
 }
 
-
+#map-container-div {
+  margin-top: 50px;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
 .mapboxgl-ctrl {
   background-color: black;
   color: white;
@@ -15,12 +20,10 @@
   border-radius: 0%;
 }
 
-
 .mapboxgl-ctrl-geocoder {
   input {
     color: white !important;
   }
-
 }
 
 input:focus {
@@ -38,11 +41,11 @@ input:focus {
 
 .marker-points {
   color: $white;
-    font-size: .4rem;
-    line-height: 1px;
+  font-size: 0.4rem;
+  line-height: 1px;
 }
 
 img.marker-logo {
-    height: 1.5rem;
-    color: $black;
+  height: 1.5rem;
+  color: $black;
 }

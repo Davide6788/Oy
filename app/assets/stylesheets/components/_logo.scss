@@ -20,7 +20,7 @@
 
 .dropdown-menu {
   background-color: white;
-  padding: 20px;
+  padding: 15px;
 
   height: 50rem;
   width: 25rem;
@@ -35,16 +35,19 @@
   text-decoration: underline;
 }
 
-.wallet {
+.home {
   text-align: left;
 }
-
-.map {
+.wallet {
   text-align: right;
 }
 
-.feed {
+.map {
   text-align: left;
+}
+
+.feed {
+  text-align: right;
 }
 
 .add-a-business {

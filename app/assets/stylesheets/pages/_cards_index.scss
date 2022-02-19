@@ -7,11 +7,11 @@
 }
 
 .wallet-card-image {
-  position:relative;
+  position: relative;
 }
 
 .wallet-card-details {
-  position:absolute;
+  position: absolute;
   bottom: 1rem;
 }
 
@@ -20,10 +20,14 @@
 }
 
 li.cards-wallet-index-card.col-12 {
-  padding-left:0;
-  padding-right:0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .cards-wallet-index-card-full {
   border-bottom: 1px solid $white;
+}
+
+.container {
+  margin-top: 0px;
 }
