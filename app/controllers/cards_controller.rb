@@ -1,5 +1,4 @@
 class CardsController < ApplicationController
-
   def index
     if params[:order] == 'desc'
       @cards = Card.where(user_id: current_user).order(points: :desc)
@@ -26,7 +25,9 @@ class CardsController < ApplicationController
     if @card.save
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "stamps", locals: { chatroom: @chatroom, card: @card, reward_mechanism: @reward_mechanism })
+        render_to_string(partial: "stamps",
+                         locals: { chatroom: @chatroom, card: @card,
+                                   reward_mechanism: @reward_mechanism })
       )
       redirect_to my_customers_business_path(@card.business)
     end
@@ -58,7 +59,9 @@ class CardsController < ApplicationController
     if @card.save
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "stamps", locals: { chatroom: @chatroom, card: @card, reward_mechanism: @reward_mechanism })
+        render_to_string(partial: "stamps",
+                         locals: { chatroom: @chatroom, card: @card,
+                                   reward_mechanism: @reward_mechanism })
       )
       redirect_to my_customers_business_path(@card.business)
     else
