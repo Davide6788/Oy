@@ -21,6 +21,10 @@
   }
 }
 
+.content-info-window:focus {
+  outline: none !important;
+}
+
 .card-info-window img {
   height: 80px;
   width: 100%;
