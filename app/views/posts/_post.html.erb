@@ -1,11 +1,11 @@
 <div class="message_container" id="message-<%=post.id%>">
     <div class= "author">
       <div class="author">
-        <div class= "avatar">
-         <%= cl_image_tag(post.business.photo.key,
-          style:'', class: "avatar-business-img") %>
+        <div class= "post-avatar">
+          <%= cl_image_tag(post.business.photo.key,
+          class: "avatar-business-img") %>
         </div>
-        <div class= "author-name">
+        <div class= "author-details">
           <div class= "business-name">
             <p class= "bold"><%= post.business.name %></p>
           </div>
@@ -20,25 +20,25 @@
           <%= cl_image_tag(post.photo.key,
           style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
         <% end %>
+      </div>
+      <div class="like-button">
         <button class="btn btn-like">
-    <span class="btn-icon btn--icon-default">
-        <span class="fa fa-heart"></span>
-    </span>
-    <span class="btn-icon btn--icon-liked">
-        <span class="fa fa-heart"></span>
-    </span>
-    <span class="btn-content  btn-content--liked">
-    </span>
-    <span class="btn-content btn-content--default">
-    </span>
-</button>
+          <span class="btn-icon btn--icon-default">
+            <span class="fa fa-heart"></span>
+          </span>
+          <span class="btn-icon btn--icon-liked">
+            <span class="fa fa-heart"></span>
+          </span>
+          <span class="btn-content  btn-content--liked">
+          </span>
+          <span class="btn-content btn-content--default">
+          </span>
+        </button>
+      </div>
       <div class= "post-message">
         <div class= "business-name-message">
           <p><span class="business-name-message"><%= post.business.name %></span> <span class="business-content-message"><%= post.content %></span></p>
-
         </div>
-
       </div>
       <small><%= post.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </div>
     </div>
