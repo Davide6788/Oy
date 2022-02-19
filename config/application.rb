@@ -24,6 +24,6 @@ module Oy
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.hosts << '0cac-89-3-77-113.ngrok.io'
+    config.hosts << 'www.oy-app.me'
   end
-
 end
