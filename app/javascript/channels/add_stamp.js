@@ -26,6 +26,7 @@ const initAddStampCable = () => {
               const flashBox = document.querySelector('.flash-box')
               flashBox.insertAdjacentHTML("beforeend", `<div class='alert alert-info alert-dismissible fade show m-1' role='alert'>Congrats ! You've reached your reward: ${discount} ! <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div >`)
               audio.play();
+
             }
           };
         },
@@ -33,6 +34,7 @@ const initAddStampCable = () => {
     );
   }
 };
+
 
 export { initAddStampCable };
 
