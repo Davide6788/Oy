@@ -4,11 +4,22 @@
       <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/businesses/new') %>>add a shop</p>
     </li>
     <li class="sidebar-nav-location">
-      <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/businesses/:id') %>>shop</p>
+      <p class="sidebar-nav-text light" <%= 'id=active' if current_page?(controller: "businesses", action:"show") %>>shop</p>
     </li>
     <li class="sidebar-nav-location">
       <p class="sidebar-nav-text light" <%= 'id=active'  if current_page?('/cards') %>>wallet</p>
     </li>
+    <li class="sidebar-nav-location">
+      <p class="sidebar-nav-text light" <%= 'id=active'  if current_page?('/businesses') %>>map</p>
+    </li>
+    <li class="sidebar-nav-location">
+      <p class="sidebar-nav-text light" <%= 'id=active'  if current_page?('/posts') %>>feed</p>
+    </li>
+    <% if current_user.business_ids != [] %>
+      <li class="sidebar-nav-location">
+        <p class="sidebar-nav-text light" <%= 'id=active'  if current_page?(controller: "businesses", action:"my_businesses") %>>my businesses</p>
+      </li>
+    <% end %>
     <li class="sidebar-nav-location">
       <p class="sidebar-nav-text light" <%= 'id=active' if current_page?('/users/sign_in') %>>login</p>
     </li>
