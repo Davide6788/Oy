@@ -7,7 +7,7 @@
         </div>
         <div class= "author-name">
           <div class= "business-name">
-            <p class= "bold"><%= post.business.name %></p>
+            <p class= "bold"><%= link_to post.business.name, business_path(post.business.id) %></p>
           </div>
           <div class="business-address">
             <p class="light"><%= post.business.address %></p>
