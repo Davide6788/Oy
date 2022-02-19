@@ -1,6 +1,4 @@
 class RewardMechanismsController < ApplicationController
-
-
   def new
     @business = Business.find(params[:business_id])
     @reward_mechanism = RewardMechanism.new
