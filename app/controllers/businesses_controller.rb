@@ -28,10 +28,6 @@ class BusinessesController < ApplicationController
     @user = current_user
     @card = Card.find_by(business_id: @business.id, user_id: @user.id) if user_signed_in?
     @chatroom = Chatroom.find(2)
-
-    {
-      reward_mechanism: @reward_mechanism
-    }
   end
 
   def my_businesses
