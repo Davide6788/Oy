@@ -13,54 +13,67 @@
   width: 3rem;
 }
 
-.move-left {
-  left: -21.5rem;
-  top: 5rem;
+.navigation-menu {
+  position: fixed;
+  top: 6rem;
+  // margin-right: 2rem;
+  // margin-left: 2rem;
+  // width: 100%;
+  margin-left: 2rem;
 }
+
+@media (min-width: 375px) {
+  .navigation-menu {
+    // min-width: 340px;
+    width: 87%;
+  }
+}
+
+@media (min-width: 576px) {
+  .navigation-menu {
+    // min-width: 540px;
+    width: 91%;
+  }
+}
+@media (min-width: 768px) {
+  .navigation-menu {
+    // min-width: 720px;
+    width: 93%;
+  }
+}
+@media (min-width: 1200px) {
+  .navigation-menu {
+    width: 96%;
+  }
+}
+
 
 .dropdown-menu {
   background-color: white;
-  padding: 15px;
-
-  height: 58rem;
-  width: 25rem;
+  // padding: 15px;
+  // height: 58rem;
   a {
     font-weight: normal;
-    font-size: 5rem;
+    font-size: 2.5rem;
   }
 }
 
 .dropdown-item {
-  line-height: 9rem;
+  line-height: 5rem;
   text-decoration: underline;
+  padding: 0.25rem 0.5rem;
 }
-
-.home {
-  text-align: left;
-}
-.wallet {
+.right {
   text-align: right;
 }
 
-.map {
-  text-align: left;
-}
-
-.feed {
-  text-align: right;
-}
-
-.add-a-business {
-  text-align: left;
-}
-
-.font-color-black {
-  color: black;
-  line-height: 9rem;
-  font-size: 5rem;
-  text-decoration: underline;
-  font-weight: normal;
-}
+// .font-color-black {
+//   color: black;
+//   line-height: 9rem;
+//   font-size: 5rem;
+//   text-decoration: underline;
+//   font-weight: normal;
+// }
 
 .navbar-business-link {
   margin-right: 1rem;
