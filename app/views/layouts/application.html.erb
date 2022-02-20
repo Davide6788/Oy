@@ -17,6 +17,8 @@
     <%= render 'shared/flashes' %>
 
     <% if current_page?('/') %>
+      <%= render 'shared/sidebar' %>
+      <div class="container">
       <%= yield %>
     <% else %>
       <%= render 'shared/sidebar' %>

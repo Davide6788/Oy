@@ -1,14 +1,109 @@
-<div class='fixed-background'>
+
+
+<%# <div class='fixed-background'>
+</div> %>
+
+<div class="home-page-header">
+  <h2 class="home-page-header">Buy local, Meet people, Earn rewards, Smile.</h1>
 </div>
-
-
-
+<div class="home-page-banner d-flex">
+  <div class="home-page-banner-section section-one">
+    <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
+    style:'height:12rem;width:100%;object-fit:cover;', class: "home-page-image-img") %>
+    <h1 class="home-page-banner">Oy</h1>
+  </div>
+  <div class="home-page-banner-section section-two">
+    <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
+    style:'height:20rem;width:100%;object-fit:cover;', class: "home-page-image-img") %>
+  </div>
+</div>
+<div class="home-page-navigation d-flex justify-content-center">
+  <ul class="home-page-navigation-buttons-list">
+    <li class="home-page-navigation-button">
+      <button class="directions-btn btn">
+        <%= link_to "wallet", cards_path %>
+      </button>
+    </li>
+    <li class="home-page-navigation-button">
+      <button class="directions-btn btn">
+        <%= link_to "map", businesses_path %>
+      </button>
+    </li>
+    <li class="home-page-navigation-button">
+      <button class="directions-btn btn">
+        <%= link_to "feed", posts_path %>
+      </button>
+    </li>
+  </ul>
+</div>
+<div class="home-page-content">
+  <div class="home-page-mission-statement">
+    <p class="mission-statement">Local busineses are at the core of our society.</p>
+    <p class="mission-statement">Our mission is to support our community and empower people to consume responsibly and sustainbly.</p>
+  </div>
+  <div class="wallet-description app-description d-flex">
+    <div class="wallet-description-content">
+      <div class="description-content-header">
+        <p class="description-content-header">All of your favourites, in one place</p>
+      </div>
+      <div class="description-content-body">
+        <p class="description-content-body">Keep all of your loyalty cards in one place.</p>
+        <p class="description-content-body">Be rewarded for supporting your favourite local businesses</p>
+      </div>
+    </div>
+    <div class="wallet-description-image">
+      <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
+    style:'height:338px;width:169px;object-fit:cover;', class: "description-image-img") %>
+    </div>
+  </div>
+  <div class="wallet-description-button description-button d-flex justify-content-center">
+    <button class="directions-btn btn">
+      <%= link_to "wallet", cards_path %>
+    </button>
+  </div>
+  <div class="map-description app-description d-flex">
+    <div class="map-description-image">
+      <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
+    style:'height:338px;width:169px;object-fit:cover;', class: "description-image-img") %>
+    </div>
+    <div class="map-description-content ml-2">
+      <div class="description-content-header">
+        <p class="description-content-header">Find new shops in your area</p>
+      </div>
+      <div class="description-content-body">
+        <p class="description-content-body">Discover businesses, meet new people,  support local producers and get rewarded</p>
+      </div>
+    </div>
+  </div>
+  <div class="wallet-description-button description-button d-flex justify-content-center">
+    <button class="directions-btn btn">
+      <%= link_to "map", businesses_path %>
+    </button>
+  </div>
+  <div class="feed-description app-description d-flex">
+    <div class="feed-description-content">
+      <div class="description-content-header">
+        <p class="description-content-header">Lorem ipsum dolor sit amet consectetur</p>
+      </div>
+      <div class="description-content-body">
+        <p class="description-content-body">Lorem ipsum dolor sit amet consectetur</p>
+      </div>
+    </div>
+    <div class="feed-description-image">
+      <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
+    style:'height:338px;width:169px;object-fit:cover;', class: "description-image-img") %>
+    </div>
+  </div>
+  <div class="wallet-description-button description-button d-flex justify-content-center">
+    <button class="directions-btn btn">
+      <%= link_to "feed", posts_path %>
+    </button>
+  </div>
+</div>
 
 <div class='page'>
   <div class='first-part'>
-    <h1>Buy local, <br>
-        Meet people, <br>
-        Smile.</h1>
+    <h1>Buy local, Meet people, Smile.</h1>
   </div>
 
   <div class='second-part'>
