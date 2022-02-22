@@ -13,54 +13,106 @@
   width: 3rem;
 }
 
-.move-left {
-  left: -21.5rem;
-  top: 5rem;
+.navigation-menu {
+  position: fixed;
+  top: 6rem;
+  // margin-right: 2rem;
+  // margin-left: 2rem;
+  // width: 100%;
+  // margin-left: 2rem;
+  width: 70vw;
+  left: 21vw;
 }
+
+.navigation-menu {
+  animation: grow .25s;
+}
+.dropdown-item {
+  animation: appear 1s;
+}
+// .oy-logo {
+//   animation: rotate .5s;
+// }
+@keyframes grow {
+  from {  height: 1%;
+          }
+  to   {  height: 18rem;
+  }
+}
+@keyframes appear {
+  from {
+    color: transparent;
+  }
+  to {
+    color: $black;
+  }
+}
+// @keyframes rotate {
+//   from {
+//     transform: rotate(0turn);
+//   }
+//   to {
+//     transform: rotate(0.5turn);
+//   }
+// }
+
+@media (min-width: 375px) {
+  .navigation-menu {
+    // min-width: 340px;
+    width: 45vw;
+    left: 50vw;
+  }
+}
+
+@media (min-width: 576px) {
+  .navigation-menu {
+    // min-width: 540px;
+    width: 41vw;
+    left: 55vw;
+  }
+}
+@media (min-width: 768px) {
+  .navigation-menu {
+    // min-width: 720px;
+    width: 32vw;
+    left: 66vw;
+  }
+}
+@media (min-width: 1200px) {
+  .navigation-menu {
+    width: 22vw;
+    left: 76vw;
+  }
+}
+
 
 .dropdown-menu {
   background-color: white;
-  padding: 15px;
-
-  height: 58rem;
-  width: 25rem;
+  // padding: 15px;
+  // height: 58rem;
   a {
     font-weight: normal;
-    font-size: 5rem;
+    font-size: 1.5rem;
   }
 }
 
 .dropdown-item {
-  line-height: 9rem;
+  line-height: 3rem;
   text-decoration: underline;
+  padding: 0.25rem 0.5rem;
+  color: $black;
 }
-
-.home {
-  text-align: left;
-}
-.wallet {
+.right {
   text-align: right;
 }
 
-.map {
-  text-align: left;
-}
-
-.feed {
-  text-align: right;
-}
-
-.add-a-business {
-  text-align: left;
-}
-
-.font-color-black {
-  color: black;
-  line-height: 9rem;
-  font-size: 5rem;
-  text-decoration: underline;
-  font-weight: normal;
-}
+// .font-color-black {
+//   color: black;
+//   line-height: 9rem;
+//   font-size: 5rem;
+//   text-decoration: underline;
+//   font-weight: normal;
+// }
 
 .navbar-business-link {
   margin-right: 1rem;
