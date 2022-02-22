@@ -1,13 +1,15 @@
-<h1><%= @messageroom.business.name %></h1>
-<div id="messages" data-messageroom-id="<%= @messageroom.id %>">
-  <% @messageroom.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-  <% end %>
+<h2 class="chat-title">Chat with <%= @messageroom.business.name %></h2>
+<div class="chat-border">
+  <div id="messages" data-messageroom-id="<%= @messageroom.id %>">
+    <% @messageroom.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
 </div>
 
 <%= simple_form_for [ @messageroom, @message ], remote: true do |f| %>
   <%= f.input :content,
   label: false,
-  placeholder: "Message #{@messageroom.business.name}"
+  placeholder: "Send a message to #{@messageroom.business.name}"
    %>
 <% end %>
