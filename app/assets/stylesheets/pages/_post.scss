@@ -92,7 +92,8 @@ button.btn.btn-like {
     cursor: pointer;
   }
   .btn-like {
-    color: $white;
+    color: black;
+    text-shadow: $white solid 1px;
   }
   button:focus {
     box-shadow: none;
