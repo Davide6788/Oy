@@ -6,16 +6,16 @@
           class: "avatar-business-img") %>
         </div>
         <div class= "author-details">
-          <div class= "business-name">
+          <div class= "business-name-font">
             <p class= "bold"><%= link_to post.business.name, business_path(post.business.id) %></p>
           </div>
-          <div class="business-address">
+          <div id="business-location" class="business-address">
             <p class="light"><%= post.business.address %></p>
           </div>
         </div>
       </div>
     </div>
-      <div class="business-card-image">
+      <div class="business-card-image-post">
         <% unless post.photo.key.nil? %>
           <%= cl_image_tag(post.photo.key,
           style:'height:13rem;width:100%;object-fit:cover;', class: "posts-image-img") %>
