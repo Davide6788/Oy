@@ -1,7 +1,12 @@
-.mapboxgl-popup>.mapboxgl-popup-content {
+.mapboxgl-popup > .mapboxgl-popup-content {
   color: black;
   width: 152px;
   padding: 0;
+  margin-right: -100px;
+}
+
+.navbarDropdown {
+  z-index: 4;
 }
 
 .content-info-window {
@@ -13,7 +18,7 @@
     text-align: left;
     text-decoration: underline;
   }
-  p{
+  p {
     color: black;
     font-weight: normal;
     text-align: right;

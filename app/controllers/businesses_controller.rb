@@ -4,6 +4,7 @@ class BusinessesController < ApplicationController
     @user = current_user
     @cards = Card.where(user_id: @user)
     @markers = @businesses.map do |business|
+      @card = @cards.find_by(business_id: business.id)
       if @cards.include?(Card.find_by(business_id: business.id))
         @card = Card.find_by(business_id: business.id)
         @card_points = @card.points
@@ -12,7 +13,7 @@ class BusinessesController < ApplicationController
       {
         lat: business.latitude,
         lng: business.longitude,
-        infowindow: render_to_string(partial: "infowindow", locals: { business: business }),
+        infowindow: render_to_string(partial: "infowindow", locals: { business: business, card: @card }),
         image_url: helpers.asset_path("logo-menu.svg"),
         card_nil: @card.nil?,
         card_points: @card_points,
