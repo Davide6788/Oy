@@ -19,16 +19,22 @@
 .author-details {
   display: flex;
   justify-content: center;
-  text-decoration: underline;
+  //text-decoration: underline;
   flex-direction: column;
   margin-left: 1.25rem;
 }
 
-.business-name {
+.business-name-font {
   //display: flex;
-  text-decoration: underline;
+  //text-decoration: underline;
   color: white;
+  p {
+    a{
+      font-size: 28px;
+    }
+  }
 }
+
 
 .business-content-message {
   //display: flex;
@@ -38,8 +44,17 @@
 .business-address {
   display: flex;
   justify-content: center;
-  text-decoration: underline;
   font-size: 5px;
+  border-bottom: none;
+  p {
+    text-decoration: none;
+    font-size: 16px;
+  }
+}
+
+
+.business-card-image-post {
+  margin-top: 0.8rem;
 }
 
 img.avatar-business-img {
@@ -77,13 +92,14 @@ button.btn.btn-like {
     cursor: pointer;
   }
   .btn-like {
-    color: $white;
+    color: black;
+    text-shadow: $white solid 1px;
   }
   button:focus {
     box-shadow: none;
   }
 }
-.btn {
+//.btn {
   // margin-top: 10px;
   // margin-bottom: 10px;
   // width: 50px;
@@ -94,16 +110,16 @@ button.btn.btn-like {
   // position: relative;
   // display: flex;
   // justify-content: space-between;
-}
+//}
 
-.btn-like {
+//.btn-like {
   // padding: 1.5rem 1.5rem 1.5rem 6rem;
   // font-size: 25px;
   // color: rgb(255, 255, 255);
   // margin-bottom: 20px;
   // margin-top: -5px;
   // margin-left: -5px;
-}
+//}
 .btn-like.liked {
   background: var(--red);
   border-color: var(--red);
