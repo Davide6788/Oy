@@ -5,6 +5,8 @@
       <h3><%= business.name %></h3>
       <p><%= business.address.split(",", 2).map {|split| "#{split}" }.first %></p>
       <%# <p><%= business.cards.where(user_id: current_user.id).point %></p> %>
+  <p><%= business.cards.find_by(user_id: current_user.id) ? business.cards.find_by(user_id: current_user.id).points : "0" %>/<%= business.reward_mechanism.counter %></p>
+
 
 
 
