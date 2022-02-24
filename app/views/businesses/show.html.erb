@@ -63,13 +63,14 @@
   <button id="hidden-button"></button>
 </div>
 
+
+<% if @business.user == current_user %>
   <div class="useful-links">
+
     <div class="create-a-card">
       <%= link_to 'My Conversations', my_messagerooms_business_path(@business) %>
     </div>
-  </div>
-<% if @business.user == current_user %>
-  <div class="useful-links">
+
     <div class="create-a-card">
       <%= link_to 'Create a card for a client', new_business_card_path(@business) %>
     </div>
