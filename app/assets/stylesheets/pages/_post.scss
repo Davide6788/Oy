@@ -77,13 +77,14 @@ button.btn.btn-like {
     cursor: pointer;
   }
   .btn-like {
-    color: $white;
+    color: black;
+    text-shadow: $white solid 1px;
   }
   button:focus {
     box-shadow: none;
   }
 }
-.btn {
+//.btn {
   // margin-top: 10px;
   // margin-bottom: 10px;
   // width: 50px;
@@ -94,16 +95,16 @@ button.btn.btn-like {
   // position: relative;
   // display: flex;
   // justify-content: space-between;
-}
+//}
 
-.btn-like {
+//.btn-like {
   // padding: 1.5rem 1.5rem 1.5rem 6rem;
   // font-size: 25px;
   // color: rgb(255, 255, 255);
   // margin-bottom: 20px;
   // margin-top: -5px;
   // margin-left: -5px;
-}
+//}
 .btn-like.liked {
   background: var(--red);
   border-color: var(--red);
