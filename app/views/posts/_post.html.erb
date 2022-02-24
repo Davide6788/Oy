@@ -10,7 +10,7 @@
             <p class= "bold"><%= link_to post.business.name, business_path(post.business.id) %></p>
           </div>
           <div class="business-address">
-            <p class="light"><%= post.business.address %></p>
+            <p class="light"><%= post.business.address.split(",").first %></p>
           </div>
         </div>
       </div>
