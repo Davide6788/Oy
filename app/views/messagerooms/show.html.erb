@@ -1,10 +1,8 @@
 <h2 class="chat-title">Chat with <%= @messageroom.business.name %></h2>
-<div class="chat-border">
-  <div id="messages" data-messageroom-id="<%= @messageroom.id %>">
-    <% @messageroom.messages.each do |message| %>
-        <%= render "messages/message", message: message %>
-    <% end %>
-  </div>
+<div class="chat-border" id="messages" data-messageroom-id="<%= @messageroom.id %>">
+  <% @messageroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+  <% end %>
 </div>
 
 <div class="input-chat-box">
