@@ -8,7 +8,7 @@
         <%= link_to business_messagerooms_path(@business), method: :post do %><i class="fas fa-paper-plane" style="color: white"></i><% end %>
       </div>
       <h2><%= @business.name %></h2>
-      <p class="light"><%= @business.address %></p>
+      <p class="light business-show-address-font"><%= @business.address.split(",", 2).map {|split| "#{split}" }.first%></p>
     </div>
 
     <div class="business-card-image">
@@ -26,16 +26,9 @@
     </div>
     <div class="business-card-button d-flex justify-content-center">
       <button class="directions-btn btn">
-        <%= link_to 'Get directions', "https://maps.google.com?q=#{@business.latitude},#{@business.longitude}", :target => "_blank"%>
+        <%= link_to 'Directions', "https://maps.google.com?q=#{@business.latitude},#{@business.longitude}", :target => "_blank"%>
       </button>
 
-    </div>
-
-    <div class="business-card-footer">
-      <% if @business.host_names %>
-        <p class="bold">Owners:</p>
-        <p class="light"><%= @business.host_names %></p>
-      <% end %>
     </div>
   </div>
 </div>
