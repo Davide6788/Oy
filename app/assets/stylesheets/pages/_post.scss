@@ -29,12 +29,11 @@
   //text-decoration: underline;
   color: white;
   p {
-    a{
+    a {
       font-size: 28px;
     }
   }
 }
-
 
 .business-content-message {
   //display: flex;
@@ -43,7 +42,7 @@
 }
 .business-address {
   display: flex;
-  justify-content: center;
+  //justify-content: center;
   font-size: 5px;
   border-bottom: none;
   p {
@@ -51,7 +50,6 @@
     font-size: 16px;
   }
 }
-
 
 .business-card-image-post {
   margin-top: 0.8rem;
@@ -82,7 +80,7 @@ img.avatar-business-img {
   --black: #000;
 }
 button.btn.btn-like {
-  padding:0;
+  padding: 0;
 }
 .like-button {
   margin-top: 10px;
@@ -100,25 +98,25 @@ button.btn.btn-like {
   }
 }
 //.btn {
-  // margin-top: 10px;
-  // margin-bottom: 10px;
-  // width: 50px;
-  // height: 20px;
-  // outline: 0;
-  // color: #000;
-  // cursor: pointer;
-  // position: relative;
-  // display: flex;
-  // justify-content: space-between;
+// margin-top: 10px;
+// margin-bottom: 10px;
+// width: 50px;
+// height: 20px;
+// outline: 0;
+// color: #000;
+// cursor: pointer;
+// position: relative;
+// display: flex;
+// justify-content: space-between;
 //}
 
 //.btn-like {
-  // padding: 1.5rem 1.5rem 1.5rem 6rem;
-  // font-size: 25px;
-  // color: rgb(255, 255, 255);
-  // margin-bottom: 20px;
-  // margin-top: -5px;
-  // margin-left: -5px;
+// padding: 1.5rem 1.5rem 1.5rem 6rem;
+// font-size: 25px;
+// color: rgb(255, 255, 255);
+// margin-bottom: 20px;
+// margin-top: -5px;
+// margin-left: -5px;
 //}
 .btn-like.liked {
   background: var(--red);
