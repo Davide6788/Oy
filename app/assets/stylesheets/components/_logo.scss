@@ -1,6 +1,7 @@
 .oy-logo {
   width: 3rem;
   height: 6rem;
+  margin-right: 15px;
 }
 
 .navbar {
@@ -30,9 +31,8 @@
   left: 21vw;
 }
 
-
 .navigation-menu {
-  animation: grow .25s;
+  animation: grow 0.25s;
 }
 .dropdown-item {
   animation: appear 1s;
@@ -43,9 +43,11 @@
 // }
 
 @keyframes grow {
-  from {  height: 1%;
-          }
-  to   {  height: 18rem;
+  from {
+    height: 1%;
+  }
+  to {
+    height: 18rem;
   }
 }
 @keyframes appear {
@@ -93,7 +95,6 @@
     left: 76vw;
   }
 }
-
 
 .dropdown-menu {
   background-color: white;
