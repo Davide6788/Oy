@@ -5,13 +5,8 @@ class BusinessesController < ApplicationController
     @cards = Card.where(user_id: @user)
     @markers = @businesses.map do |business|
       @card = @cards.find_by(business_id: business.id)
-      if @cards.include?(Card.find_by(business_id: business.id))
-        @card = Card.find_by(business_id: business.id, user_id: current_user.id)
-        @card_points = @card.points
-        @card_total = business.reward_mechanism.counter
-      else
-        @card_points = 0
-      end
+      @card ? @card_points = @card.points : @card_points = 0
+      @card_total = business.reward_mechanism.counter
       {
         lat: business.latitude,
         lng: business.longitude,
