@@ -20,10 +20,10 @@
             <div class="cards-wallet-index-card wallet-card-image">
               <% if card.business.photo.key.nil? %>
                 <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
-                style:'height:12rem;width:100%;', class: "business-card-image-img") %>
+                style:'height:12rem;width:100%;object-fit:cover;', class: "business-card-image-img") %>
               <% else %>
                 <%= cl_image_tag(card.business.photo.key,
-                style:'height:12rem;width:100%;', class: "business-card-image-img") %>
+                style:'height:12rem;width:100%;object-fit:cover;', class: "business-card-image-img") %>
               <% end %>
               <div class="cards-wallet-index-card wallet-card-details col-8 col-md-6">
                 <p class="text-shadow"><%= card.points %>/10</p>

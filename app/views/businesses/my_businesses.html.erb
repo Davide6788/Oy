@@ -12,10 +12,10 @@
             <% end %>
             <% if business.photo.key.nil? %>
               <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
-              style:'height:12rem;width:100%;', class: "business-card-image-img") %>
+              style:'height:12rem;width:100%;object-fit:cover;', class: "business-card-image-img") %>
             <% else %>
               <%= cl_image_tag(business.photo.key,
-              style:'height:12rem;width:100%;', class: "business-card-image-img") %>
+              style:'height:12rem;width:100%;object-fit:cover;', class: "business-card-image-img") %>
             <% end %>
             <%= link_to "#{pluralize( business.cards.count, 'customer' )}", my_customers_business_path(business) %>
            </li>
