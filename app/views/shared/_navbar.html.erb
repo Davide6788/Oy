@@ -6,16 +6,16 @@
       </div>
     <% end%>
   <% end %>
-  <div class='oy-logo'>
-    <div class="nav-item dropdown">
-      <img id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src= <%= image_path("logo-menu.svg")%>  alt="logo Oy">
-      <div class="navigation-menu dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        <%= link_to 'Home', root_path, class:"dropdown-item" %>
-        <%= link_to 'Wallet', cards_path, class:"dropdown-item right" %>
-        <%= link_to 'Map', businesses_path, class:"dropdown-item" %>
-        <%= link_to 'Feed', posts_path, class:"dropdown-item right" %>
-        <%= link_to 'Add business', new_business_path, class:"dropdown-item" %>
+    <div class='oy-logo'>
+      <div class="nav-item dropdown">
+        <img id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src= <%= image_path("logo-menu.svg")%>  alt="logo Oy">
+        <div class="navigation-menu dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to 'Home', root_path, class:"dropdown-item" %>
+          <%= link_to 'Wallet', cards_path, class:"dropdown-item right" %>
+          <%= link_to 'Map', businesses_path, class:"dropdown-item" %>
+          <%= link_to 'Feed', posts_path, class:"dropdown-item right" %>
+          <%= link_to 'Add business', new_business_path, class:"dropdown-item" %>
+        </div>
       </div>
     </div>
-  </div>
 </div>

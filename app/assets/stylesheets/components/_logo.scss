@@ -11,6 +11,12 @@
 #navbarDropdown {
   height: 6rem;
   width: 3rem;
+  z-index: 4;
+}
+
+#navbarDropdown.active {
+  transform: rotate(270deg);
+  transition: 300ms ease all;
 }
 
 .navigation-menu {
@@ -24,15 +30,18 @@
   left: 21vw;
 }
 
+
 .navigation-menu {
   animation: grow .25s;
 }
 .dropdown-item {
   animation: appear 1s;
 }
-// .oy-logo {
-//   animation: rotate .5s;
+
+// .oy-logo.active {
+//   transform: rotate(90deg);
 // }
+
 @keyframes grow {
   from {  height: 1%;
           }
@@ -88,7 +97,7 @@
 
 .dropdown-menu {
   background-color: white;
-  z-index: 2;
+  z-index: 4;
   // padding: 15px;
   // height: 58rem;
   a {

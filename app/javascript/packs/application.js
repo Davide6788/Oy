@@ -28,6 +28,7 @@ import { initAutocomplete } from "../plugins/init_autocomplete";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initAddStampCable } from "../channels/add_stamp";
 import { initMessageroomCable } from "../channels/messageroom_channel";
+import { rotationLogo } from "../components/rotate_logo";
 
 document.addEventListener("turbolinks:load", () => {
   // Rails.refreshCSRFTokens()
@@ -36,4 +37,5 @@ document.addEventListener("turbolinks:load", () => {
   initChatroomCable();
   initAddStampCable();
   initMessageroomCable();
+  rotationLogo();
 });
