@@ -21,6 +21,7 @@
 }
 
 .mapboxgl-ctrl-geocoder {
+  position: static;
   input {
     color: white !important;
   }
