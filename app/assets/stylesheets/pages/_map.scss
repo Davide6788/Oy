@@ -10,19 +10,20 @@
 }
 
 .content-info-window {
-  padding: 1rem;
+  padding: .75rem .25rem;
   h3 {
-    color: black;
+    color: $black;
     font-size: 1.2rem;
     font-weight: bold;
     text-align: left;
     text-decoration: underline;
+    margin-bottom: .25rem;
   }
   p {
-    color: black;
     font-weight: normal;
-    text-align: right;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    line-height: .75rem;
+
   }
 }
 
@@ -41,4 +42,17 @@
 
 .all-content-link {
   border: none;
+}
+
+.content-info-window-card-counter {
+  color: $black;
+}
+
+.content-info-window-card-address {
+  text-align: right;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.mapboxgl-popup-close-button {
+  color: white;
 }
