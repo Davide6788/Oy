@@ -5,6 +5,10 @@
   margin-right: -100px;
 }
 
+.mapboxgl-popup-content:focus-visible {
+  outline: none !important;
+}
+
 .navbarDropdown {
   z-index: 4;
 }
