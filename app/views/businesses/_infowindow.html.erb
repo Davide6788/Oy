@@ -1,12 +1,5 @@
 
 <div class="card-info-window">
-  <%= link_to business_path(business), class:"all-content-link" do %>
-    <div class="content-info-window">
-      <h3><%= business.name %></h3>
-      <p><%= business.address.split(",", 2).map {|split| "#{split}" }.first %></p>
-      <p><%= business.cards.find_by(user_id: current_user.id) ? business.cards.find_by(user_id: current_user.id).points : "0" %>/<%= business.reward_mechanism.counter %></p>
-
-    </div>
     <% if business.photo.key.nil? %>
       <%= cl_image_tag("i9i2cfvj6deun9x23yvc3av45knv",
       width: 200, height: 150, crop: :fill, class: "business-card-image-img") %>
@@ -14,5 +7,12 @@
       <%= cl_image_tag(business.photo.key,
       width: 200, height: 150, crop: :fill, class: "business-card-image-img") %>
     <% end %>
+  <%= link_to business_path(business), class:"all-content-link" do %>
+    <div class="content-info-window">
+      <p class="content-info-window-card-counter"><%= business.cards.find_by(user_id: current_user.id) ? business.cards.find_by(user_id: current_user.id).points : "0" %>/<%= business.reward_mechanism.counter %></p>
+      <h3><%= business.name %></h3>
+      <p class="content-info-window-card-address"><%= business.address.split(",", 2).map {|split| "#{split}" }.first %></p>
+
+    </div>
   <% end %>
 </div>
